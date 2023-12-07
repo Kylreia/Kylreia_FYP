@@ -5,9 +5,9 @@ Git Repository for my Final Year Project
 Run in Godot Engine
 
 # Prototype Contents:
-Basic Environment
-Camera and Enemy Model added to show general point of view of the player
-Playable character has 4 skills with animations and effects:
+- Basic Environment
+- Camera and Enemy Model added to show general point of view of the player
+- Playable character has 4 skills with animations and effects:
 
 # How to play:
 - Press Q or left arrow key to fire a blue bolt
