@@ -73,3 +73,5 @@ func spawn_purple():
 # Loop idle animation for when the player has not pressed any key for a while
 # Add trails to orbs
 # Add defensive mechanics
+# Keep track of a design document
+# Research on grid map
