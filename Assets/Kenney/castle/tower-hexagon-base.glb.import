@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bxrowc0ddp7mc"
-path="res://.godot/imported/tower-hexagon-base.glb-68d1487191767023e12180d7d1da73d6.scn"
+path="res://.godot/imported/tower-hexagon-base.glb-9eedee6068ea4765ed262a5cf2ccccea.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/tower-hexagon-base.glb"
-dest_files=["res://.godot/imported/tower-hexagon-base.glb-68d1487191767023e12180d7d1da73d6.scn"]
+source_file="res://Assets/Kenney/castle/tower-hexagon-base.glb"
+dest_files=["res://.godot/imported/tower-hexagon-base.glb-9eedee6068ea4765ed262a5cf2ccccea.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cx8scktko4400"
-path="res://.godot/imported/flag-pennant.glb-c28620b07297696ace29f4667671945f.scn"
+path="res://.godot/imported/flag-pennant.glb-c061143cffc653f372cb29871a798895.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/flag-pennant.glb"
-dest_files=["res://.godot/imported/flag-pennant.glb-c28620b07297696ace29f4667671945f.scn"]
+source_file="res://Assets/Kenney/castle/flag-pennant.glb"
+dest_files=["res://.godot/imported/flag-pennant.glb-c061143cffc653f372cb29871a798895.scn"]
 
 [params]
 

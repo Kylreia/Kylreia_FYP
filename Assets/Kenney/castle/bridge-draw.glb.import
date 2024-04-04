@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cx3y06x01cu14"
-path="res://.godot/imported/bridge-draw.glb-69e81602773cb6095cd788fce178a94a.scn"
+path="res://.godot/imported/bridge-draw.glb-2bad73d29966991124a5d59be59091c8.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/bridge-draw.glb"
-dest_files=["res://.godot/imported/bridge-draw.glb-69e81602773cb6095cd788fce178a94a.scn"]
+source_file="res://Assets/Kenney/castle/bridge-draw.glb"
+dest_files=["res://.godot/imported/bridge-draw.glb-2bad73d29966991124a5d59be59091c8.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bo0b5bnr08ymo"
-path="res://.godot/imported/tower-square-base-border.glb-5d1f9fc82e3556e6c50227e78ab30efc.scn"
+path="res://.godot/imported/tower-square-base-border.glb-9a2d2bbbef43433f3e9c1bfe3b0aaf56.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/tower-square-base-border.glb"
-dest_files=["res://.godot/imported/tower-square-base-border.glb-5d1f9fc82e3556e6c50227e78ab30efc.scn"]
+source_file="res://Assets/Kenney/castle/tower-square-base-border.glb"
+dest_files=["res://.godot/imported/tower-square-base-border.glb-9a2d2bbbef43433f3e9c1bfe3b0aaf56.scn"]
 
 [params]
 

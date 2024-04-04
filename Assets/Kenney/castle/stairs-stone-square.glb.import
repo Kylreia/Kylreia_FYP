@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://tjxjl0ifrmlu"
-path="res://.godot/imported/stairs-stone-square.glb-d745da8b972fc650195150eaee1c23e1.scn"
+path="res://.godot/imported/stairs-stone-square.glb-4124ba5b293b8ec6e2a97e2f7bba9c84.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/stairs-stone-square.glb"
-dest_files=["res://.godot/imported/stairs-stone-square.glb-d745da8b972fc650195150eaee1c23e1.scn"]
+source_file="res://Assets/Kenney/castle/stairs-stone-square.glb"
+dest_files=["res://.godot/imported/stairs-stone-square.glb-4124ba5b293b8ec6e2a97e2f7bba9c84.scn"]
 
 [params]
 

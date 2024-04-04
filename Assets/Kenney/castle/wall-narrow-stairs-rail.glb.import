@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bnbketbl7038v"
-path="res://.godot/imported/wall-narrow-stairs-rail.glb-4e6358f189c73d57b4642232c128239a.scn"
+path="res://.godot/imported/wall-narrow-stairs-rail.glb-4be168fee856083bfe04f953de417d85.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/wall-narrow-stairs-rail.glb"
-dest_files=["res://.godot/imported/wall-narrow-stairs-rail.glb-4e6358f189c73d57b4642232c128239a.scn"]
+source_file="res://Assets/Kenney/castle/wall-narrow-stairs-rail.glb"
+dest_files=["res://.godot/imported/wall-narrow-stairs-rail.glb-4be168fee856083bfe04f953de417d85.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0oa5yn886xbo"
-path="res://.godot/imported/siege-ballista-demolished.glb-bb5f7d826a46dedf0118f34c24a8f96f.scn"
+path="res://.godot/imported/siege-ballista-demolished.glb-718bc9d10c25ea7866dfd7f973dc6106.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/siege-ballista-demolished.glb"
-dest_files=["res://.godot/imported/siege-ballista-demolished.glb-bb5f7d826a46dedf0118f34c24a8f96f.scn"]
+source_file="res://Assets/Kenney/castle/siege-ballista-demolished.glb"
+dest_files=["res://.godot/imported/siege-ballista-demolished.glb-718bc9d10c25ea7866dfd7f973dc6106.scn"]
 
 [params]
 

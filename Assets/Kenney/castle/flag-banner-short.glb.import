@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cxuqo022rucdj"
-path="res://.godot/imported/flag-banner-short.glb-5734a6a96b58dad5ed57a6ec47001edc.scn"
+path="res://.godot/imported/flag-banner-short.glb-1720c33652b95a3a5473b8f3080a196a.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/flag-banner-short.glb"
-dest_files=["res://.godot/imported/flag-banner-short.glb-5734a6a96b58dad5ed57a6ec47001edc.scn"]
+source_file="res://Assets/Kenney/castle/flag-banner-short.glb"
+dest_files=["res://.godot/imported/flag-banner-short.glb-1720c33652b95a3a5473b8f3080a196a.scn"]
 
 [params]
 

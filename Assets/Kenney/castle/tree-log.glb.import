@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bb43mk4pumn16"
-path="res://.godot/imported/tree-log.glb-e04e563648b463bfb63d52080e446fe6.scn"
+path="res://.godot/imported/tree-log.glb-64dc18d65a9d99868e22577e3df2834d.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/tree-log.glb"
-dest_files=["res://.godot/imported/tree-log.glb-e04e563648b463bfb63d52080e446fe6.scn"]
+source_file="res://Assets/Kenney/castle/tree-log.glb"
+dest_files=["res://.godot/imported/tree-log.glb-64dc18d65a9d99868e22577e3df2834d.scn"]
 
 [params]
 

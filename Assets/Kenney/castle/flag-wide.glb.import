@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://n4h7qbk6uxi0"
-path="res://.godot/imported/flag-wide.glb-d33e9454c3f59722d65d9648005f080b.scn"
+path="res://.godot/imported/flag-wide.glb-282400cf1dcaea60df84eb96fbda559b.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/flag-wide.glb"
-dest_files=["res://.godot/imported/flag-wide.glb-d33e9454c3f59722d65d9648005f080b.scn"]
+source_file="res://Assets/Kenney/castle/flag-wide.glb"
+dest_files=["res://.godot/imported/flag-wide.glb-282400cf1dcaea60df84eb96fbda559b.scn"]
 
 [params]
 

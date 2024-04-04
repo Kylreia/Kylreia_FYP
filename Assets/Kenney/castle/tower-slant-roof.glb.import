@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bepl1qoxl7nxv"
-path="res://.godot/imported/tower-slant-roof.glb-c7a8b76f1ec890c17e54533209e5fc53.scn"
+path="res://.godot/imported/tower-slant-roof.glb-79b0b6f401bd8d8f410dfb51278c9c28.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/tower-slant-roof.glb"
-dest_files=["res://.godot/imported/tower-slant-roof.glb-c7a8b76f1ec890c17e54533209e5fc53.scn"]
+source_file="res://Assets/Kenney/castle/tower-slant-roof.glb"
+dest_files=["res://.godot/imported/tower-slant-roof.glb-79b0b6f401bd8d8f410dfb51278c9c28.scn"]
 
 [params]
 

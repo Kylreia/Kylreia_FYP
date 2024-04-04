@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgolgqvnxvegm"
-path="res://.godot/imported/wall-half-modular.glb-3bfeb56466b21e066332464dcc762801.scn"
+path="res://.godot/imported/wall-half-modular.glb-ae85ccecd11158e91db84a426bc99ac9.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/wall-half-modular.glb"
-dest_files=["res://.godot/imported/wall-half-modular.glb-3bfeb56466b21e066332464dcc762801.scn"]
+source_file="res://Assets/Kenney/castle/wall-half-modular.glb"
+dest_files=["res://.godot/imported/wall-half-modular.glb-ae85ccecd11158e91db84a426bc99ac9.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d17ry3tw5cqnn"
-path="res://.godot/imported/bridge-straight-pillar.glb-aa1cf3309bfba83692269242de72df1b.scn"
+path="res://.godot/imported/bridge-straight-pillar.glb-0c1219e9bf2ea6d23bb0e70d76b94fc4.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/bridge-straight-pillar.glb"
-dest_files=["res://.godot/imported/bridge-straight-pillar.glb-aa1cf3309bfba83692269242de72df1b.scn"]
+source_file="res://Assets/Kenney/castle/bridge-straight-pillar.glb"
+dest_files=["res://.godot/imported/bridge-straight-pillar.glb-0c1219e9bf2ea6d23bb0e70d76b94fc4.scn"]
 
 [params]
 

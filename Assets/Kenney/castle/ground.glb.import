@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byvihj2b0a7ys"
-path="res://.godot/imported/ground.glb-6816095d7c49bb93466bbc7f32a68893.scn"
+path="res://.godot/imported/ground.glb-e3be5bff2780f5ce701980a0e515110e.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/ground.glb"
-dest_files=["res://.godot/imported/ground.glb-6816095d7c49bb93466bbc7f32a68893.scn"]
+source_file="res://Assets/Kenney/castle/ground.glb"
+dest_files=["res://.godot/imported/ground.glb-e3be5bff2780f5ce701980a0e515110e.scn"]
 
 [params]
 

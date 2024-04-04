@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://k3cti6mqkrqe"
-path="res://.godot/imported/siege-ram-demolished.glb-3eaafcd6f6060b72b3f928009117e562.scn"
+path="res://.godot/imported/siege-ram-demolished.glb-08882498cd8557c649477153a65de265.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/siege-ram-demolished.glb"
-dest_files=["res://.godot/imported/siege-ram-demolished.glb-3eaafcd6f6060b72b3f928009117e562.scn"]
+source_file="res://Assets/Kenney/castle/siege-ram-demolished.glb"
+dest_files=["res://.godot/imported/siege-ram-demolished.glb-08882498cd8557c649477153a65de265.scn"]
 
 [params]
 

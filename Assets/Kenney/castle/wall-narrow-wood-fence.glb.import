@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://plhli3oydyen"
-path="res://.godot/imported/wall-narrow-wood-fence.glb-52571736601f89cc77e5becda72bfda5.scn"
+path="res://.godot/imported/wall-narrow-wood-fence.glb-c1037b51698f07766623aad5f348595d.scn"
 
 [deps]
 
-source_file="res://Assets/Kenney/castle/GLB format/wall-narrow-wood-fence.glb"
-dest_files=["res://.godot/imported/wall-narrow-wood-fence.glb-52571736601f89cc77e5becda72bfda5.scn"]
+source_file="res://Assets/Kenney/castle/wall-narrow-wood-fence.glb"
+dest_files=["res://.godot/imported/wall-narrow-wood-fence.glb-c1037b51698f07766623aad5f348595d.scn"]
 
 [params]
 
