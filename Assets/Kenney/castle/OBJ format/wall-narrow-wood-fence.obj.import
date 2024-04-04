@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2bp427xy28i8"
+path="res://.godot/imported/wall-narrow-wood-fence.obj-880e62e1a622565bef38f17bd65977f2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-narrow-wood-fence.obj-880e62e1a622565bef38f17bd65977f2.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/wall-narrow-wood-fence.obj"
+dest_files=["res://.godot/imported/wall-narrow-wood-fence.obj-880e62e1a622565bef38f17bd65977f2.mesh", "res://.godot/imported/wall-narrow-wood-fence.obj-880e62e1a622565bef38f17bd65977f2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

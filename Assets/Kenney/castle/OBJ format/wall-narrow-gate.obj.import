@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bd1lklr7d8fv5"
+path="res://.godot/imported/wall-narrow-gate.obj-5301382deb41c96c3c37787a2ff1b597.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-narrow-gate.obj-5301382deb41c96c3c37787a2ff1b597.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/wall-narrow-gate.obj"
+dest_files=["res://.godot/imported/wall-narrow-gate.obj-5301382deb41c96c3c37787a2ff1b597.mesh", "res://.godot/imported/wall-narrow-gate.obj-5301382deb41c96c3c37787a2ff1b597.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

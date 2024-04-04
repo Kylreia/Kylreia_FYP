@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbsjcx5dqfc2q"
+path="res://.godot/imported/tree-small.obj-a49a53c2ef178a3283fd7bc9af88b708.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree-small.obj-a49a53c2ef178a3283fd7bc9af88b708.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/tree-small.obj"
+dest_files=["res://.godot/imported/tree-small.obj-a49a53c2ef178a3283fd7bc9af88b708.mesh", "res://.godot/imported/tree-small.obj-a49a53c2ef178a3283fd7bc9af88b708.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

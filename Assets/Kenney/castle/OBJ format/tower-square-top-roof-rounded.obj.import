@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clon7gdpprdvm"
+path="res://.godot/imported/tower-square-top-roof-rounded.obj-391ebfe76e5c74786d66b3465b3f465e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-top-roof-rounded.obj-391ebfe76e5c74786d66b3465b3f465e.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/tower-square-top-roof-rounded.obj"
+dest_files=["res://.godot/imported/tower-square-top-roof-rounded.obj-391ebfe76e5c74786d66b3465b3f465e.mesh", "res://.godot/imported/tower-square-top-roof-rounded.obj-391ebfe76e5c74786d66b3465b3f465e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

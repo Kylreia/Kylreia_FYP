@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1an2qe7rc1mm"
+path="res://.godot/imported/tower-hexagon-top-wood.obj-81e5b7d081f1985afbc34dd442ae531b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-hexagon-top-wood.obj-81e5b7d081f1985afbc34dd442ae531b.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/tower-hexagon-top-wood.obj"
+dest_files=["res://.godot/imported/tower-hexagon-top-wood.obj-81e5b7d081f1985afbc34dd442ae531b.mesh", "res://.godot/imported/tower-hexagon-top-wood.obj-81e5b7d081f1985afbc34dd442ae531b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

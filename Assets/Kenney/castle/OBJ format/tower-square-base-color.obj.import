@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cekh4y7x37fdp"
+path="res://.godot/imported/tower-square-base-color.obj-7642e2c10b46a7da70a0b9e4cc7809fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-base-color.obj-7642e2c10b46a7da70a0b9e4cc7809fb.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/tower-square-base-color.obj"
+dest_files=["res://.godot/imported/tower-square-base-color.obj-7642e2c10b46a7da70a0b9e4cc7809fb.mesh", "res://.godot/imported/tower-square-base-color.obj-7642e2c10b46a7da70a0b9e4cc7809fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

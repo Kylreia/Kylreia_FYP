@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2whkq1slmylc"
+path="res://.godot/imported/tower-hexagon-base.obj-6a7e2415f41c30c47685f5fd01676019.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-hexagon-base.obj-6a7e2415f41c30c47685f5fd01676019.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/tower-hexagon-base.obj"
+dest_files=["res://.godot/imported/tower-hexagon-base.obj-6a7e2415f41c30c47685f5fd01676019.mesh", "res://.godot/imported/tower-hexagon-base.obj-6a7e2415f41c30c47685f5fd01676019.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

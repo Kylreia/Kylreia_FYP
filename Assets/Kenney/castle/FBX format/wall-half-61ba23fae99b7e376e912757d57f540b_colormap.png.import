@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ckk1n04mbo61n"
+path.s3tc="res://.godot/imported/wall-half-61ba23fae99b7e376e912757d57f540b_colormap.png-800217ca33eb2888f64905f52f7bc06b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://Assets/Kenney/castle/FBX format/wall-half-61ba23fae99b7e376e912757d57f540b_colormap.png"
+dest_files=["res://.godot/imported/wall-half-61ba23fae99b7e376e912757d57f540b_colormap.png-800217ca33eb2888f64905f52f7bc06b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

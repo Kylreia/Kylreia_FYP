@@ -1,0 +1,32 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://qch78yygobje"
+path="res://.godot/imported/tower-square-top-color.glb-e742bf6899814b5e31fe6a70a3c37545.scn"
+
+[deps]
+
+source_file="res://Assets/Kenney/castle/GLB format/tower-square-top-color.glb"
+dest_files=["res://.godot/imported/tower-square-top-color.glb-e742bf6899814b5e31fe6a70a3c37545.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=1

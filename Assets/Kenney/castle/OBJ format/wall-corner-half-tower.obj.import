@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce7j1bhkbqtno"
+path="res://.godot/imported/wall-corner-half-tower.obj-b0f2f3bbcdb6db6c70bb80437c01a512.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner-half-tower.obj-b0f2f3bbcdb6db6c70bb80437c01a512.mesh"]
+
+source_file="res://Assets/Kenney/castle/OBJ format/wall-corner-half-tower.obj"
+dest_files=["res://.godot/imported/wall-corner-half-tower.obj-b0f2f3bbcdb6db6c70bb80437c01a512.mesh", "res://.godot/imported/wall-corner-half-tower.obj-b0f2f3bbcdb6db6c70bb80437c01a512.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
