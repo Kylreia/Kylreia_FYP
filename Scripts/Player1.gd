@@ -12,26 +12,26 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Skill1"):
-		get_node("../Player/AnimationPlayer").play("Blue")
+		get_node("../Player/AnimationPlayer").play("Blast")
 		await get_tree().create_timer(1.1).timeout
 		spawn_blue()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Skill2"):
-		get_node("../Player/AnimationPlayer").play("Red")
+		get_node("../Player/AnimationPlayer").play("Rupture")
 		await get_tree().create_timer(1.15).timeout
 		spawn_red()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
-		get_node("../Player/AnimationPlayer").play("Infinity")
+		get_node("../Player/AnimationPlayer").play("Barrier")
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Ultimate"):
-		get_node("../Player/AnimationPlayer").play("Purple")
+		get_node("../Player/AnimationPlayer").play("Hit")
 		await get_tree().create_timer(3.2).timeout
 		spawn_purple()
 		await get_node("../Player/AnimationPlayer").animation_finished
