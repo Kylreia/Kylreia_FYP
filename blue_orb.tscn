@@ -20,14 +20,14 @@ particles_anim_loop = false
 offsets = PackedFloat32Array(0.843318, 0.995392, 1)
 colors = PackedColorArray(0.0196078, 0.101961, 0.419608, 1, 0, 0.396078, 0.984314, 1, 0.772549, 0.956863, 0.992157, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ux4d"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o8f21"]
 gradient = SubResource("Gradient_ymxs5")
 
 [sub_resource type="Curve" id="Curve_0etgc"]
 _data = [Vector2(0.00403225, 0.747368), 0.0, 0.0, 0, 0, Vector2(0.370968, 1), 0.0, 0.0, 0, 0, Vector2(0.665323, 0.989474), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.747368), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 6
 
-[sub_resource type="CurveTexture" id="CurveTexture_dh33h"]
+[sub_resource type="CurveTexture" id="CurveTexture_hheyc"]
 width = 2048
 curve = SubResource("Curve_0etgc")
 
@@ -39,8 +39,8 @@ angular_velocity_max = 15.0
 angle_max = 360.0
 scale_min = 1.2
 scale_max = 1.2
-scale_curve = SubResource("CurveTexture_dh33h")
-color_ramp = SubResource("GradientTexture1D_6ux4d")
+scale_curve = SubResource("CurveTexture_hheyc")
+color_ramp = SubResource("GradientTexture1D_o8f21")
 
 [sub_resource type="QuadMesh" id="QuadMesh_10k5e"]
 
