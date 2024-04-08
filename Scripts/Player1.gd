@@ -12,27 +12,30 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Skill1"):
-		get_node("../Player/AnimationPlayer").play("Shard")
-		await get_tree().create_timer(1.1).timeout
+		get_node("../Player/AnimationPlayer").play("Blue")
+		await get_tree().create_timer(1.25).timeout
 		spawn_blue()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Skill2"):
-		get_node("../Player/AnimationPlayer").play("Whip")
-		await get_tree().create_timer(1.15).timeout
+		get_node("../Player/AnimationPlayer").play("Red")
 		spawn_red()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
-		get_node("../Player/AnimationPlayer").play("Wall")
+		get_node("../Player/AnimationPlayer").play("InfinityS")
+		await get_node("../Player/AnimationPlayer").animation_finished
+		get_node("../Player/AnimationPlayer").play("Infinity")
+		await get_node("../Player/AnimationPlayer").animation_finished
+		get_node("../Player/AnimationPlayer").play("InfinityE")
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Ultimate"):
-		get_node("../Player/AnimationPlayer").play("Wave")
-		await get_tree().create_timer(3.2).timeout
+		get_node("../Player/AnimationPlayer").play("Purple")
+		await get_tree().create_timer(2.22).timeout
 		spawn_purple()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		
