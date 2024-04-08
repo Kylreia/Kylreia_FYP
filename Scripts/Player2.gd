@@ -26,7 +26,7 @@ func _input(event):
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
-		get_node("../Player/AnimationPlayer").play("Burner")
+		get_node("../Player/AnimationPlayer").play("Overheat")
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
