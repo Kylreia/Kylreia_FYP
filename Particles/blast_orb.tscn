@@ -44,7 +44,7 @@ color_ramp = SubResource("GradientTexture1D_6ux4d")
 
 [sub_resource type="QuadMesh" id="QuadMesh_5xd5g"]
 
-[node name="Node3D" type="RigidBody3D"]
+[node name="BlastOrb" type="RigidBody3D"]
 gravity_scale = 0.6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

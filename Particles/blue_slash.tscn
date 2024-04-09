@@ -43,7 +43,7 @@ color_ramp = SubResource("GradientTexture1D_r7f2q")
 
 [sub_resource type="QuadMesh" id="QuadMesh_lucpt"]
 
-[node name="orange_slash" type="RigidBody3D"]
+[node name="blue_slash" type="RigidBody3D"]
 freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

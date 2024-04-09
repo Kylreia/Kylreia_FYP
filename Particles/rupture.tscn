@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://caxvawnou2s7m"]
+
+[ext_resource type="Texture2D" uid="uid://b06v6ow5smfc" path="res://Assets/Particles/slash_04.png" id="1_660qu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_18iw6"]
+radius = 0.33
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu2kh"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_660qu")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_io1xt"]
+offsets = PackedFloat32Array(0.414747, 0.820276, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.164706, 0.129412, 0.345098, 1, 0.239216, 0.211765, 0.584314, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0vvfn"]
+gradient = SubResource("Gradient_io1xt")
+
+[sub_resource type="Curve" id="Curve_wvvs1"]
+_data = [Vector2(0, 0.747368), 0.0, 0.0, 0, 0, Vector2(0.370968, 1), 0.0, 0.0, 0, 0, Vector2(0.665323, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.736842), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_kaf6s"]
+width = 2048
+curve = SubResource("Curve_wvvs1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pxoi0"]
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0.1, 0.1)
+gravity = Vector3(0, 0, 0)
+angular_velocity_max = 15.0
+angle_max = 360.0
+scale_min = 1.2
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_kaf6s")
+color = Color(0.407843, 0.396078, 0.85098, 1)
+color_ramp = SubResource("GradientTexture1D_0vvfn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_38iny"]
+
+[node name="Ruptures" type="RigidBody3D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_18iw6")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_xu2kh")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_pxoi0")
+draw_pass_1 = SubResource("QuadMesh_38iny")

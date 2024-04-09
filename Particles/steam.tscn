@@ -44,7 +44,7 @@ color_ramp = SubResource("GradientTexture1D_mue4w")
 
 [sub_resource type="QuadMesh" id="QuadMesh_12x02"]
 
-[node name="InfinityOrb" type="RigidBody3D"]
+[node name="Steam" type="RigidBody3D"]
 gravity_scale = 0.0
 freeze = true
 
