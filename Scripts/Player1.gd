@@ -4,6 +4,8 @@ extends Node3D
 @onready var blue_spawn_point = get_node("../CameraNode/BlueSpawn")
 @onready var red_skill = preload("res://red_orb.tscn")
 @onready var red_spawn_point = get_node("../CameraNode/RedSpawn")
+@onready var infinity_skill = preload("res://infinity_orb.tscn")
+@onready var infinity_spawn_point = get_node("../CameraNode/InfinitySpawn")
 @onready var purple_skill = preload("res://purple_orb.tscn")
 @onready var purple_spawn_point = get_node("../CameraNode/PurpleSpawn")
 
@@ -26,6 +28,7 @@ func _input(event):
 	
 	elif event.is_action_pressed("Block"):
 		get_node("../Player/AnimationPlayer").play("InfinityS")
+		spawn_infinity()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Infinity")
 		await get_node("../Player/AnimationPlayer").animation_finished
@@ -38,7 +41,6 @@ func _input(event):
 		await get_tree().create_timer(2.22).timeout
 		spawn_purple()
 		await get_node("../Player/AnimationPlayer").animation_finished
-		
 		get_node("../Player/AnimationPlayer").play("Idle")
 
 func spawn_blue():
@@ -58,6 +60,17 @@ func spawn_red():
 	
 	red_orb.transform = red_spawn_point.global_transform
 	red_orb.linear_velocity = red_spawn_point.global_transform.basis.z  * red_spd
+	
+func spawn_infinity():
+	var infinity_orb = infinity_skill.instantiate()
+	
+	add_sibling(infinity_orb)
+	
+	infinity_orb.transform = infinity_spawn_point.global_transform
+	
+	await get_tree().create_timer(3.5).timeout
+	
+	infinity_orb.queue_free()
 
 func spawn_purple():
 	var purp_spd = 25
