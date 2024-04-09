@@ -20,23 +20,20 @@ func _input(event):
 	if event.is_action_pressed("Skill1"):
 		get_node("../Enemy/AnimationPlayer").play("Shard")
 		await get_tree().create_timer(1.4).timeout
-		spawn_shard()
+		# spawn_shard()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
 		get_node("../Enemy/AnimationPlayer").play("Whip")
 	
 	elif event.is_action_pressed("Skill2"):
 		get_node("../Enemy/AnimationPlayer").play("Blast")
 		await get_tree().create_timer(1).timeout
-		for n in 5:
-			spawn_whip()
-			await get_tree().create_timer(0.3).timeout
-		# end for
+		# spawn_whip()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
 		get_node("../Enemy/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
 		get_node("../Enemy/AnimationPlayer").play("Wall")
-		await get_tree().create_timer(1.7).timeout
+		await get_tree().create_timer(0.9).timeout
 		spawn_wall()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
 		get_node("../Enemy/AnimationPlayer").play("Idle")
@@ -44,7 +41,9 @@ func _input(event):
 	elif event.is_action_pressed("Ultimate"):
 		get_node("../Enemy/AnimationPlayer").play("Wave")
 		await get_tree().create_timer(0.1).timeout
-		spawn_wave()
+		for n in 2:
+			await get_tree().create_timer(0.1).timeout
+			spawn_wave()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
 		get_node("../Enemy/AnimationPlayer").play("Idle")
 
@@ -70,6 +69,7 @@ func spawn_whip():
 	
 
 func spawn_wall():
+	var wall_spd = 10
 	var wall_orb = wall_skill.instantiate()
 	var wall_orb2 = wall_skill.instantiate()
 	
@@ -79,11 +79,12 @@ func spawn_wall():
 	wall_orb.transform = wall_spawn_point.global_transform
 	wall_orb2.transform = wall2_spawn_point.global_transform
 	
-	await get_tree().create_timer(1.5).timeout
+	wall_orb.linear_velocity = wall_spawn_point.global_transform.basis.y * wall_spd
+	wall_orb2.linear_velocity = wall2_spawn_point.global_transform.basis.y * wall_spd
 	
-	wall_orb.queue_free()
 
 func spawn_wave():
+	var wave_spd = 3
 	var wave_orb = wave_skill.instantiate()
 	var wave_orb2 = wave_skill.instantiate()
 	
@@ -93,6 +94,5 @@ func spawn_wave():
 	wave_orb.transform = wave_spawn_point.global_transform
 	wave_orb2.transform = wave2_spawn_point.global_transform
 	
-	await get_tree().create_timer(1.5).timeout
-	
-	wave_orb.queue_free()
+	wave_orb.linear_velocity = wave_spawn_point.global_transform.basis.z * -wave_spd
+	wave_orb2.linear_velocity = wave2_spawn_point.global_transform.basis.z * -wave_spd
