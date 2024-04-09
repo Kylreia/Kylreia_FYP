@@ -1,11 +1,13 @@
 extends Node3D
 
-@onready var blue_skill = preload("res://Particles/blue_orb.tscn")
-@onready var blue_spawn_point = get_node("../CameraNode/BlueSpawn")
-@onready var red_skill = preload("res://Particles/red_orb.tscn")
-@onready var red_spawn_point = get_node("../CameraNode/RedSpawn")
-@onready var purple_skill = preload("res://Particles/purple_orb.tscn")
-@onready var purple_spawn_point = get_node("../CameraNode/PurpleSpawn")
+# @onready var swipe_skill = preload("res://Particles/swipe_orb.tscn")
+@onready var swipe_spawn_point = get_node("../CameraNode/SwipeSpawn")
+@onready var lightning_skill = preload("res://Particles/lightning.tscn")
+@onready var lightning_spawn_point = get_node("../CameraNode/LightningSpawn")
+@onready var cloak_skill = preload("res://Particles/cloak.tscn")
+@onready var cloak_spawn_point = get_node("../CameraNode/CloakSpawn")
+# @onready var fragment_skill = preload("res://Particles/fragment_orb.tscn")
+@onready var fragment_spawn_point = get_node("../CameraNode/FragmentSpawn")
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
@@ -14,53 +16,68 @@ func _input(event):
 	if event.is_action_pressed("Skill1"):
 		get_node("../Player/AnimationPlayer").play("Rush")
 		await get_tree().create_timer(1.1).timeout
-		spawn_blue()
+		# spawn_swipe()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Skill2"):
 		get_node("../Player/AnimationPlayer").play("Lightning")
-		await get_tree().create_timer(1.15).timeout
-		spawn_red()
+		await get_tree().create_timer(2.4).timeout
+		for n in 3:
+			spawn_lightning()
+			await get_tree().create_timer(0.2).timeout
+		# end for
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
 		get_node("../Player/AnimationPlayer").play("Cloak")
+		await get_tree().create_timer(1.1).timeout
+		spawn_cloak()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Ultimate"):
 		get_node("../Player/AnimationPlayer").play("Fragment")
 		await get_tree().create_timer(3.2).timeout
-		spawn_purple()
+		# spawn_fragment()
 		await get_node("../Player/AnimationPlayer").animation_finished
-		
 		get_node("../Player/AnimationPlayer").play("Idle")
 
-func spawn_blue():
-	var blue_spd = 10
-	var blue_orb = blue_skill.instantiate()
-	
-	add_sibling(blue_orb)
-	
-	blue_orb.transform = blue_spawn_point.global_transform
-	blue_orb.linear_velocity = blue_spawn_point.global_transform.basis.z  * blue_spd
+#func spawn_swipe():
+#	var swipe_spd = 10
+#	var swipe_orb = swipe_skill.instantiate()
+#
+#	add_sibling(swipe_orb)
+#
+#	swipe_orb.transform = swipe_spawn_point.global_transform
+#	swipe_orb.linear_velocity = swipe_spawn_point.global_transform.basis.z  * swipe_spd
 
-func spawn_red():
-	var red_spd = 50
-	var red_orb = red_skill.instantiate()
+func spawn_lightning():
+	var lightning_spd = 30
+	var lightning_orb = lightning_skill.instantiate()
 	
-	add_sibling(red_orb)
+	add_sibling(lightning_orb)
 	
-	red_orb.transform = red_spawn_point.global_transform
-	red_orb.linear_velocity = red_spawn_point.global_transform.basis.z  * red_spd
+	lightning_orb.transform = lightning_spawn_point.global_transform
+	lightning_orb.linear_velocity = lightning_spawn_point.global_transform.basis.y  * -lightning_spd
 
-func spawn_purple():
-	var purp_spd = 25
-	var purp_orb = purple_skill.instantiate()
+func spawn_cloak():
+	var cloak_orb = cloak_skill.instantiate()
 	
-	add_sibling(purp_orb)
+	add_sibling(cloak_orb)
 	
-	purp_orb.transform = purple_spawn_point.global_transform
-	purp_orb.linear_velocity = purple_spawn_point.global_transform.basis.z  * purp_spd
+	cloak_orb.transform = cloak_spawn_point.global_transform
+	
+	await get_tree().create_timer(5.6).timeout
+	
+	cloak_orb.queue_free()
+
+#func spawn_fragment():
+#	var fragment_spd = 25
+#	var fragment_orb = fragment_skill.instantiate()
+#
+#	add_sibling(fragment_orb)
+#
+#	fragment_orb.transform = fragment_spawn_point.global_transform
+#	fragment_orb.linear_velocity = fragment_spawn_point.global_transform.basis.z  * fragment_spd
