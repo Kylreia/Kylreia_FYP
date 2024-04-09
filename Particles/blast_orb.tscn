@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bu7isghx6kfwn"]
+
+[ext_resource type="Texture2D" uid="uid://61kpq52q0eoo" path="res://Assets/Particles/fire_02.png" id="1_uk6ew"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h7rn1"]
+radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nh2om"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_uk6ew")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_udwsh"]
+offsets = PackedFloat32Array(0.364055, 0.857143, 1)
+colors = PackedColorArray(0.356863, 0.282353, 0.227451, 1, 0.835294, 0.678431, 0.333333, 1, 0.933333, 0.827451, 0.396078, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ux4d"]
+gradient = SubResource("Gradient_udwsh")
+
+[sub_resource type="Curve" id="Curve_v1bqa"]
+_data = [Vector2(0.00403225, 0.747368), 0.0, 0.0, 0, 0, Vector2(0.370968, 1), 0.0, 0.0, 0, 0, Vector2(0.665323, 0.989474), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.747368), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_dh33h"]
+width = 2048
+curve = SubResource("Curve_v1bqa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8b3d4"]
+emission_shape = 1
+emission_sphere_radius = 0.07
+gravity = Vector3(0, 0, 0)
+angular_velocity_max = 15.0
+angle_max = 360.0
+scale_min = 1.2
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_dh33h")
+color_ramp = SubResource("GradientTexture1D_6ux4d")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5xd5g"]
+
+[node name="Node3D" type="RigidBody3D"]
+gravity_scale = 0.6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_h7rn1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_nh2om")
+amount = 17
+process_material = SubResource("ParticleProcessMaterial_8b3d4")
+draw_pass_1 = SubResource("QuadMesh_5xd5g")

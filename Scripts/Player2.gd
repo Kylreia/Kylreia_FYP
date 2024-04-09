@@ -1,11 +1,14 @@
 extends Node3D
 
-@onready var blue_skill = preload("res://blue_orb.tscn")
-@onready var blue_spawn_point = get_node("../CameraNode/BlueSpawn")
-@onready var red_skill = preload("res://red_orb.tscn")
-@onready var red_spawn_point = get_node("../CameraNode/RedSpawn")
-@onready var purple_skill = preload("res://purple_orb.tscn")
-@onready var purple_spawn_point = get_node("../CameraNode/PurpleSpawn")
+@onready var slash_skill = preload("res://Particles/blue_orb.tscn")
+# @onready var slashn_skill = preload("res://Particles/blue_slash.tscn")
+@onready var slash_spawn_point = get_node("../CameraNode/SlashSpawn")
+@onready var laser_skill = preload("res://Particles/orange_laser.tscn")
+# @onready var lasern_skill = preload("res://Particles/blue_laser.tscn")
+@onready var laser_spawn_point = get_node("../CameraNode/LaserSpawn")
+@onready var laser2_spawn_point = get_node("../CameraNode/LaserSpawn2")
+@onready var steam_skill = preload("res://Particles/purple_orb.tscn")
+@onready var steam_spawn_point = get_node("../CameraNode/SteamSpawn")
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
@@ -13,54 +16,87 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("Skill1"):
 		get_node("../Player/AnimationPlayer").play("Slashes")
-		await get_tree().create_timer(1.1).timeout
-		spawn_blue()
+		await get_tree().create_timer(1.35).timeout
+		spawn_slash()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Skill2"):
 		get_node("../Player/AnimationPlayer").play("Laser")
-		await get_tree().create_timer(1.15).timeout
-		spawn_red()
+		await get_tree().create_timer(1.4).timeout
+		spawn_laser()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Block"):
 		get_node("../Player/AnimationPlayer").play("Overheat")
+		# spawn_steam()
 		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Ultimate"):
-		get_node("../Player/AnimationPlayer").play("Laser")
-		await get_tree().create_timer(3.2).timeout
-		spawn_purple()
+		get_node("../Player/AnimationPlayer").play("Slashes")
+		await get_tree().create_timer(1.35).timeout
+		spawn_slashb()
 		await get_node("../Player/AnimationPlayer").animation_finished
-		
+		get_node("../Player/AnimationPlayer").play("Laser")
+		await get_tree().create_timer(1.4).timeout
+		spawn_laserb()
+		await get_node("../Player/AnimationPlayer").animation_finished
 		get_node("../Player/AnimationPlayer").play("Idle")
 
-func spawn_blue():
-	var blue_spd = 10
-	var blue_orb = blue_skill.instantiate()
+func spawn_slash():
+	var slash_spd = 10
+	var slash_orb = slash_skill.instantiate()
 	
-	add_sibling(blue_orb)
+	add_sibling(slash_orb)
 	
-	blue_orb.transform = blue_spawn_point.global_transform
-	blue_orb.linear_velocity = blue_spawn_point.global_transform.basis.z  * blue_spd
+	slash_orb.transform = slash_spawn_point.global_transform
+	slash_orb.linear_velocity = slash_spawn_point.global_transform.basis.z  * slash_spd
 
-func spawn_red():
-	var red_spd = 50
-	var red_orb = red_skill.instantiate()
+func spawn_laser():
+	var laser_spd = 30
+	var laser_orb = laser_skill.instantiate()
+	var laser2_orb = laser_skill.instantiate()
 	
-	add_sibling(red_orb)
+	add_sibling(laser_orb)
+	add_sibling(laser2_orb)
 	
-	red_orb.transform = red_spawn_point.global_transform
-	red_orb.linear_velocity = red_spawn_point.global_transform.basis.z  * red_spd
+	laser_orb.transform = laser_spawn_point.global_transform
+	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd	
+	laser2_orb.transform = laser2_spawn_point.global_transform
+	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd	
 
-func spawn_purple():
-	var purp_spd = 25
-	var purp_orb = purple_skill.instantiate()
+func spawn_slashb():
+	var slash_spd = 10
+	var slash_orb = slash_skill.instantiate()
 	
-	add_sibling(purp_orb)
+	add_sibling(slash_orb)
 	
-	purp_orb.transform = purple_spawn_point.global_transform
-	purp_orb.linear_velocity = purple_spawn_point.global_transform.basis.z  * purp_spd
+	slash_orb.transform = slash_spawn_point.global_transform
+	slash_orb.linear_velocity = slash_spawn_point.global_transform.basis.z  * slash_spd
+
+func spawn_laserb():
+	var laser_spd = 50
+	var laser_orb = laser_skill.instantiate()
+	var laser2_orb = laser_skill.instantiate()
+	
+	add_sibling(laser_orb)
+	add_sibling(laser2_orb)
+	
+	laser_orb.transform = laser_spawn_point.global_transform
+	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd	
+	laser2_orb.transform = laser2_spawn_point.global_transform
+	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd	
+
+func spawn_steam():
+	var steam_spd = 25
+	var steam_orb = steam_skill.instantiate()
+	
+	add_sibling(steam_orb)
+	
+	steam_orb.transform = steam_spawn_point.global_transform
+	steam_orb.linear_velocity = steam_spawn_point.global_transform.basis.z  * steam_spd
+	
+
+

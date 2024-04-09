@@ -1,10 +1,10 @@
 extends Node3D
 
-@onready var blue_skill = preload("res://blue_orb.tscn")
+@onready var blue_skill = preload("res://Particles/blue_orb.tscn")
 @onready var blue_spawn_point = get_node("../CameraNode/BlueSpawn")
-@onready var red_skill = preload("res://red_orb.tscn")
+@onready var red_skill = preload("res://Particles/red_orb.tscn")
 @onready var red_spawn_point = get_node("../CameraNode/RedSpawn")
-@onready var purple_skill = preload("res://purple_orb.tscn")
+@onready var purple_skill = preload("res://Particles/purple_orb.tscn")
 @onready var purple_spawn_point = get_node("../CameraNode/PurpleSpawn")
 
 func _ready():
