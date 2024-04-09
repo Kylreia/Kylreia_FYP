@@ -19,13 +19,12 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("Skill1"):
 		get_node("../Enemy/AnimationPlayer").play("Shard")
-		await get_tree().create_timer(1.4).timeout
-		# spawn_shard()
+		spawn_shard()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
-		get_node("../Enemy/AnimationPlayer").play("Whip")
+		get_node("../Enemy/AnimationPlayer").play("Idle")
 	
 	elif event.is_action_pressed("Skill2"):
-		get_node("../Enemy/AnimationPlayer").play("Blast")
+		get_node("../Enemy/AnimationPlayer").play("Whip")
 		await get_tree().create_timer(1).timeout
 		# spawn_whip()
 		await get_node("../Enemy/AnimationPlayer").animation_finished
@@ -48,13 +47,13 @@ func _input(event):
 		get_node("../Enemy/AnimationPlayer").play("Idle")
 
 func spawn_shard():
-	var shard_spd = 10
+	var shard_spd = 8
 	var shard_orb = shard_skill.instantiate()
 	
 	add_sibling(shard_orb)
 	
 	shard_orb.transform = shard_spawn_point.global_transform
-	shard_orb.linear_velocity = shard_spawn_point.global_transform.basis.z * shard_spd
+	shard_orb.linear_velocity = shard_spawn_point.global_transform.basis.z * -shard_spd
 
 func spawn_whip():
 	var whip_orb = whip_skill.instantiate()
@@ -84,7 +83,7 @@ func spawn_wall():
 	
 
 func spawn_wave():
-	var wave_spd = 3
+	var wave_spd = 2.7
 	var wave_orb = wave_skill.instantiate()
 	var wave_orb2 = wave_skill.instantiate()
 	
