@@ -80,12 +80,3 @@ func spawn_purple():
 	
 	purp_orb.transform = purple_spawn_point.global_transform
 	purp_orb.linear_velocity = purple_spawn_point.global_transform.basis.z  * purp_spd
-
-# To do:
-# Smoother transition from action animation to idle animation
-# Lock player out of sending inputs while an animation is playing
-# Loop idle animation for when the player has not pressed any key for a while
-# Add trails to orbs
-# Add defensive mechanics
-# Keep track of a design document
-# Research on grid map
