@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvlnv8kxwnpv0"]
+[gd_scene load_steps=9 format=3 uid="uid://dvlnv8kxwnpv0"]
 
-[ext_resource type="Theme" uid="uid://bpk41v36e0nqm" path="res://Assets/Themes/buttons.tres" id="1_eu2jg"]
 [ext_resource type="Script" path="res://Scripts/stage_select.gd" id="1_ynjy0"]
+[ext_resource type="Texture2D" uid="uid://dgp011ucn7yow" path="res://Assets/Themes/trainingroom.png" id="2_21lda"]
+[ext_resource type="Theme" uid="uid://cmi43yy5hdmdq" path="res://Assets/Themes/buttons2.tres" id="2_cccnp"]
+[ext_resource type="Texture2D" uid="uid://bgk4ou8fum37q" path="res://Assets/Themes/demontower.png" id="4_kvuq7"]
+[ext_resource type="Texture2D" uid="uid://dt1d32a0bxfla" path="res://Assets/Themes/dimensioncrack.png" id="5_xj7ay"]
+[ext_resource type="Texture2D" uid="uid://bi4rtgt8lj21e" path="res://Assets/Themes/shibuyacrossing.png" id="6_0iqtc"]
+[ext_resource type="FontFile" uid="uid://c503v70w64w20" path="res://Assets/UI/ui/font/kenvector_future_thin.ttf" id="6_jltsr"]
+[ext_resource type="Texture2D" uid="uid://jniut5up4tsn" path="res://Assets/UI/ui-rpg/arrowSilver_left.png" id="8_empsa"]
 
 [node name="StageSelect" type="Control"]
 layout_mode = 3
@@ -18,55 +24,124 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.0941176, 0.0941176, 0.0941176, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 310.0
-offset_bottom = 240.0
-theme_override_constants/margin_left = 335
-theme_override_constants/margin_top = 135
-theme_override_constants/margin_right = 335
-theme_override_constants/margin_bottom = 135
+[node name="Trainingroom" type="Sprite2D" parent="."]
+position = Vector2(288, 148)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_21lda")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 50
+[node name="Shibuyacrossing" type="Sprite2D" parent="."]
+position = Vector2(864, 148)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_0iqtc")
 
-[node name="Training" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_eu2jg")
-text = "Training Room"
+[node name="Demontower" type="Sprite2D" parent="."]
+position = Vector2(864, 500)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_kvuq7")
 
-[node name="Stage1" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_eu2jg")
-text = "Stage 1 (Easy)"
+[node name="Dimensioncrack" type="Sprite2D" parent="."]
+position = Vector2(288, 500)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_xj7ay")
 
-[node name="Stage2" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_eu2jg")
-text = "Stage 2 (Medium)"
+[node name="Title" type="Label" parent="."]
+offset_left = 361.0
+offset_top = 301.0
+offset_right = 791.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.945313, 0.460938, 0.148438, 1)
+theme_override_colors/font_shadow_color = Color(0.136719, 0.0507813, 0.199219, 1)
+theme_override_colors/font_outline_color = Color(0.992188, 0.960938, 0.917969, 1)
+theme_override_fonts/font = ExtResource("6_jltsr")
+theme_override_font_sizes/font_size = 40
+text = "Select Your Stage"
 
-[node name="Stage3" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_eu2jg")
-text = "Stage 3 (Hard)"
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="Stage3Button" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 661
+theme_override_constants/margin_top = 581
+theme_override_constants/margin_right = 88
+theme_override_constants/margin_bottom = 27
 
-[node name="Back" type="Button" parent="MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Stage3Button"]
 layout_mode = 2
-theme = ExtResource("1_eu2jg")
-text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Training" to="." method="_on_training_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Stage1" to="." method="_on_stage_1_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Stage2" to="." method="_on_stage_2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Stage3" to="." method="_on_stage_3_pressed"]
-[connection signal="pressed" from="MarginContainer2/Back" to="." method="_on_back_pressed"]
+[node name="Stage3" type="Button" parent="Stage3Button/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cccnp")
+text = "Demon Tower (Hard)"
+
+[node name="Stage1Button" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 297.0
+theme_override_constants/margin_left = 615
+theme_override_constants/margin_top = 230
+theme_override_constants/margin_right = 37
+theme_override_constants/margin_bottom = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stage1Button"]
+layout_mode = 2
+
+[node name="Stage1" type="Button" parent="Stage1Button/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cccnp")
+text = "Shibuya Crossing (Easy)"
+
+[node name="Stage2Button" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 575.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 26
+theme_override_constants/margin_top = 581
+theme_override_constants/margin_right = 26
+theme_override_constants/margin_bottom = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stage2Button"]
+layout_mode = 2
+
+[node name="Stage2" type="Button" parent="Stage2Button/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cccnp")
+text = "Dimension Crack (Medium)"
+
+[node name="TrainingButton" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 297.0
+theme_override_constants/margin_left = 147
+theme_override_constants/margin_top = 230
+theme_override_constants/margin_right = 147
+theme_override_constants/margin_bottom = 27
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TrainingButton"]
+layout_mode = 2
+
+[node name="Training" type="Button" parent="TrainingButton/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_cccnp")
+text = "Training Room"
+
+[node name="BackButton" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 649.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 310
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 310
+
+[node name="Back" type="Button" parent="BackButton"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_jltsr")
+text = " Back"
+icon = ExtResource("8_empsa")
+flat = true
+
+[connection signal="pressed" from="Stage3Button/VBoxContainer/Stage3" to="." method="_on_stage_3_pressed"]
+[connection signal="pressed" from="Stage1Button/VBoxContainer/Stage1" to="." method="_on_stage_1_pressed"]
+[connection signal="pressed" from="Stage2Button/VBoxContainer/Stage2" to="." method="_on_stage_2_pressed"]
+[connection signal="pressed" from="TrainingButton/VBoxContainer/Training" to="." method="_on_training_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_back_pressed"]

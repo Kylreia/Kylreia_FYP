@@ -19,12 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_brvin")
 
-[node name="MainMenu" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 scale = Vector2(0.182698, 0.230714)
 texture = ExtResource("2_j76ti")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 325.0
 offset_top = 95.0
