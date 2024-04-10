@@ -5,7 +5,7 @@ func _on_play_pressed():
 
 
 func _on_guide_book_pressed():
-	pass # Replace with function body.
+	get_node("GuideBook").show()
 
 
 func _on_settings_pressed():
@@ -14,3 +14,7 @@ func _on_settings_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_close_pressed():
+	get_node("GuideBook").hide()

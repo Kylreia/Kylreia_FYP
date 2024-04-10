@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg684sboylrbo"]
+[gd_scene load_steps=9 format=3 uid="uid://bg684sboylrbo"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_brvin"]
 [ext_resource type="Theme" uid="uid://bpk41v36e0nqm" path="res://Assets/Themes/buttons.tres" id="1_nwjp2"]
 [ext_resource type="Texture2D" uid="uid://m4doua2iik5g" path="res://Assets/UI/ui/red_cross.png" id="3_6txmm"]
 [ext_resource type="FontFile" uid="uid://c503v70w64w20" path="res://Assets/UI/ui/font/kenvector_future_thin.ttf" id="4_s3hl3"]
+[ext_resource type="Texture2D" uid="uid://dh4si62y5dar4" path="res://Assets/Input/keyboard_q.png" id="5_xcrvs"]
+[ext_resource type="Texture2D" uid="uid://c64rv5aljp4wa" path="res://Assets/Input/keyboard_w.png" id="6_e4vyp"]
+[ext_resource type="Texture2D" uid="uid://b4gtvbwxfa876" path="res://Assets/Input/keyboard_e.png" id="7_4bf57"]
+[ext_resource type="Texture2D" uid="uid://dvrlgodqi7tud" path="res://Assets/Input/keyboard_r.png" id="8_xoa2t"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -63,11 +67,11 @@ offset_right = 75.0
 offset_bottom = 75.0
 
 [node name="Panel" type="Panel" parent="GuideBook"]
-layout_mode = 2
 offset_right = 1000.0
 offset_bottom = 500.0
 
-[node name="Button" type="Button" parent="GuideBook/Panel"]
+[node name="Close" type="Button" parent="GuideBook/Panel"]
+layout_mode = 0
 offset_left = 963.0
 offset_top = 3.0
 offset_right = 993.0
@@ -105,55 +109,71 @@ vertical_alignment = 1
 
 [node name="Skill1" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
-offset_left = -12.5
-offset_top = 36.0
-offset_right = 87.5
-offset_bottom = 57.0
+offset_left = 8.0
+offset_top = 35.0
+offset_right = 54.0
+offset_bottom = 56.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Blue
 "
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
 
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
-offset_left = -13.5
-offset_top = 74.0
-offset_right = 86.5
-offset_bottom = 95.0
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 42.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Red
 "
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
 
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
-offset_left = -12.5
-offset_top = 114.5
-offset_right = 87.5
-offset_bottom = 135.5
+offset_left = 8.0
+offset_top = 125.0
+offset_right = 79.0
+offset_bottom = 146.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Infinity
 "
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
 
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
-offset_left = -13.0
-offset_top = 162.5
-offset_right = 87.0
-offset_bottom = 183.5
+offset_left = 8.0
+offset_top = 170.0
+offset_right = 76.0
+offset_bottom = 191.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Purple
 "
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
 
 [node name="Char2" type="Label" parent="GuideBook/Panel"]
 layout_mode = 0
@@ -169,52 +189,68 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Skill1" type="Label" parent="GuideBook/Panel/Char2"]
-offset_left = 26.0
-offset_top = 35.5
-offset_right = 126.0
-offset_bottom = 56.5
+layout_mode = 0
+offset_top = 35.0
+offset_right = 116.0
+offset_bottom = 56.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Heat Blades
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char2"]
-offset_left = 25.0
-offset_top = 73.5
-offset_right = 125.0
-offset_bottom = 94.5
+layout_mode = 0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Laser Beams
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char2"]
-offset_left = 26.0
-offset_top = 114.0
-offset_right = 126.0
-offset_bottom = 135.0
+layout_mode = 0
+offset_top = 125.0
+offset_right = 100.0
+offset_bottom = 146.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Overheat
 "
-horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char2"]
-offset_left = 25.5
-offset_top = 162.0
-offset_right = 125.5
-offset_bottom = 183.0
+layout_mode = 0
+offset_top = 170.0
+offset_right = 104.0
+offset_bottom = 191.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "The Burner
 "
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
 
 [node name="Char3" type="Label" parent="GuideBook/Panel"]
 layout_mode = 0
@@ -230,10 +266,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Skill1" type="Label" parent="GuideBook/Panel/Char3"]
-offset_left = 38.0
-offset_top = 37.0
-offset_right = 138.0
-offset_bottom = 58.0
+layout_mode = 0
+offset_left = 2.0
+offset_top = 35.0
+offset_right = 122.0
+offset_bottom = 56.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Sword Dance
@@ -241,11 +278,17 @@ text = "Sword Dance
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char3"]
-offset_left = 37.0
-offset_top = 75.0
-offset_right = 137.0
-offset_bottom = 96.0
+layout_mode = 0
+offset_left = 2.0
+offset_top = 80.0
+offset_right = 154.0
+offset_bottom = 101.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Lightning Strike
@@ -253,11 +296,17 @@ text = "Lightning Strike
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char3"]
-offset_left = 38.0
-offset_top = 115.5
-offset_right = 138.0
-offset_bottom = 136.5
+layout_mode = 0
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 128.0
+offset_bottom = 146.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Light Barrier
@@ -265,11 +314,17 @@ text = "Light Barrier
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char3"]
-offset_left = 37.5
-offset_top = 163.5
-offset_right = 137.5
-offset_bottom = 184.5
+layout_mode = 0
+offset_left = 2.0
+offset_top = 170.0
+offset_right = 136.0
+offset_bottom = 191.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_s3hl3")
 text = "Light Monarch
@@ -277,7 +332,13 @@ text = "Light Monarch
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Guide Book" to="." method="_on_guide_book_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GuideBook/Panel/Close" to="." method="_on_close_pressed"]
