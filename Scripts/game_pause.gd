@@ -47,3 +47,15 @@ func _on_quit_button_pressed():
 
 func _on_close_pressed():
 	get_node("PauseMenu/GuideBook").hide()
+
+
+# Turn Queue System
+#var active_char
+#
+#func initialize():
+#	active_char = get_child(0)
+#
+#func play_turn():
+#	await active_char.play_turn()
+#	var new_index : int = (active_char.get_index() + 1) % get_child_count()
+	
