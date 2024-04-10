@@ -1,34 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpj73ca6lvi88"]
+[gd_scene load_steps=3 format=3 uid="uid://dub5j2r0n67u"]
 
-[ext_resource type="Theme" uid="uid://bpk41v36e0nqm" path="res://Assets/Themes/buttons.tres" id="1_4kcsr"]
+[ext_resource type="Theme" uid="uid://wknvh8l87apy" path="res://Assets/Themes/buttons3.tres" id="2_guyf3"]
+[ext_resource type="FontFile" uid="uid://c503v70w64w20" path="res://Assets/UI/ui/font/kenvector_future_thin.ttf" id="2_pvfrk"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 300.0
+
+[node name="Header" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 15.0
+offset_right = 268.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+theme_override_font_sizes/font_size = 32
+text = "Paused
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonCont" type="MarginContainer" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = 85
+theme_override_constants/margin_top = 66
+theme_override_constants/margin_right = 85
+theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ButtonCont"]
 layout_mode = 2
+theme_override_constants/separation = 23
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_4kcsr")
+theme = ExtResource("2_guyf3")
 text = "Resume"
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+visible = false
 layout_mode = 2
-theme = ExtResource("1_4kcsr")
+theme = ExtResource("2_guyf3")
 text = "Retry"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_4kcsr")
+theme = ExtResource("2_guyf3")
+text = "Guide Book"
+
+[node name="Button4" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_guyf3")
+text = "Settings"
+
+[node name="Button5" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_guyf3")
+text = "Stage Select"
+
+[node name="Button6" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_guyf3")
 text = "Quit"
