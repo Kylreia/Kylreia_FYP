@@ -1,7 +1,7 @@
 extends Control
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://trainingRoom.tscn")
+	get_tree().change_scene_to_file("res://stage_select.tscn")
 
 
 func _on_guide_book_pressed():

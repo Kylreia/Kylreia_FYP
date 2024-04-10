@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_brvin")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.0941176, 0.0941176, 0.0941176, 1)
@@ -42,7 +42,6 @@ theme = ExtResource("1_nwjp2")
 text = "Move List"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("1_nwjp2")
 text = "Settings"
