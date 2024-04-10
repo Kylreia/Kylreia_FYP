@@ -15,3 +15,7 @@ func _on_stage_2_pressed():
 
 func _on_stage_3_pressed():
 	get_tree().change_scene_to_file("res://demonTower.tscn")
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
