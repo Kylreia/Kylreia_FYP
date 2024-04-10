@@ -14,3 +14,6 @@ Run in Godot Engine
 - Press W or right arrow key to fire a red concentrated energy
 - Press E or down arrow key to activate Infinity to block (only animation is implemented)
 - Press R or up arrow key to fire a purple mass of energy
+
+# Assets note:
+- 2 3d models have been ommitted from the Git repository due to their large size
