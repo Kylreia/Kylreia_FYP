@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dub5j2r0n67u"]
+[gd_scene load_steps=8 format=3 uid="uid://dub5j2r0n67u"]
 
+[ext_resource type="Texture2D" uid="uid://m4doua2iik5g" path="res://Assets/UI/ui/red_cross.png" id="1_fma65"]
 [ext_resource type="Theme" uid="uid://wknvh8l87apy" path="res://Assets/Themes/buttons3.tres" id="2_guyf3"]
 [ext_resource type="FontFile" uid="uid://c503v70w64w20" path="res://Assets/UI/ui/font/kenvector_future_thin.ttf" id="2_pvfrk"]
+[ext_resource type="Texture2D" uid="uid://dh4si62y5dar4" path="res://Assets/Input/keyboard_q.png" id="3_0wgqu"]
+[ext_resource type="Texture2D" uid="uid://c64rv5aljp4wa" path="res://Assets/Input/keyboard_w.png" id="4_yhxi7"]
+[ext_resource type="Texture2D" uid="uid://b4gtvbwxfa876" path="res://Assets/Input/keyboard_e.png" id="5_vd681"]
+[ext_resource type="Texture2D" uid="uid://dvrlgodqi7tud" path="res://Assets/Input/keyboard_r.png" id="6_xm3pc"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 2
-offset_right = 400.0
-offset_bottom = 300.0
+offset_left = 375.0
+offset_top = 150.0
+offset_right = 775.0
+offset_bottom = 450.0
 
 [node name="Header" type="Label" parent="Panel"]
 layout_mode = 0
@@ -38,34 +46,308 @@ theme_override_constants/margin_bottom = 25
 layout_mode = 2
 theme_override_constants/separation = 23
 
-[node name="Button" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Resume"
 
-[node name="Button2" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="RetryButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Retry"
 
-[node name="Button3" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="GuideButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Guide Book"
 
-[node name="Button4" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Settings"
 
-[node name="Button5" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="StageButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Stage Select"
 
-[node name="Button6" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/ButtonCont/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_guyf3")
 text = "Quit"
+
+[node name="GuideBook" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 75.0
+offset_right = 115.0
+offset_bottom = 115.0
+
+[node name="Panel" type="Panel" parent="GuideBook"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 500.0
+
+[node name="Close" type="Button" parent="GuideBook/Panel"]
+layout_mode = 0
+offset_left = 963.0
+offset_top = 3.0
+offset_right = 993.0
+offset_bottom = 33.0
+scale = Vector2(1.1, 1.1)
+icon = ExtResource("1_fma65")
+flat = true
+icon_alignment = 1
+
+[node name="Header" type="Label" parent="GuideBook/Panel"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 14.0
+offset_right = 501.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+theme_override_font_sizes/font_size = 32
+text = "Guide Book
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Char1" type="Label" parent="GuideBook/Panel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 71.0
+offset_right = 244.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+theme_override_font_sizes/font_size = 32
+text = "Naoi Miya
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill1" type="Label" parent="GuideBook/Panel/Char1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 69.0
+offset_right = 50.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Blue
+"
+vertical_alignment = 1
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0wgqu")
+
+[node name="Skill2" type="Label" parent="GuideBook/Panel/Char1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 159.0
+offset_right = 38.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Red
+"
+vertical_alignment = 1
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yhxi7")
+
+[node name="Skill3" type="Label" parent="GuideBook/Panel/Char1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 249.0
+offset_right = 75.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Infinity
+"
+vertical_alignment = 1
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vd681")
+
+[node name="Skill4" type="Label" parent="GuideBook/Panel/Char1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 339.0
+offset_right = 72.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Purple
+"
+vertical_alignment = 1
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(140, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_xm3pc")
+
+[node name="Char2" type="Label" parent="GuideBook/Panel"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 71.0
+offset_right = 601.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+theme_override_font_sizes/font_size = 32
+text = "Silver Dez
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill1" type="Label" parent="GuideBook/Panel/Char2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 70.0
+offset_right = 118.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Heat Blades
+"
+vertical_alignment = 1
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0wgqu")
+
+[node name="Skill2" type="Label" parent="GuideBook/Panel/Char2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 160.0
+offset_right = 122.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Laser Beams
+"
+vertical_alignment = 1
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yhxi7")
+
+[node name="Skill3" type="Label" parent="GuideBook/Panel/Char2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 250.0
+offset_right = 102.0
+offset_bottom = 271.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Overheat
+"
+vertical_alignment = 1
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vd681")
+
+[node name="Skill4" type="Label" parent="GuideBook/Panel/Char2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 340.0
+offset_right = 106.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "The Burner
+"
+vertical_alignment = 1
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(170, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_xm3pc")
+
+[node name="Char3" type="Label" parent="GuideBook/Panel"]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 71.0
+offset_right = 940.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+theme_override_font_sizes/font_size = 32
+text = "Kang Ahyeon
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill1" type="Label" parent="GuideBook/Panel/Char3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 69.0
+offset_right = 122.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Sword Dance
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0wgqu")
+
+[node name="Skill2" type="Label" parent="GuideBook/Panel/Char3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 159.0
+offset_right = 154.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Lightning Strike
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yhxi7")
+
+[node name="Skill3" type="Label" parent="GuideBook/Panel/Char3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 249.0
+offset_right = 128.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Light Barrier
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vd681")
+
+[node name="Skill4" type="Label" parent="GuideBook/Panel/Char3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 339.0
+offset_right = 136.0
+offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("2_pvfrk")
+text = "Light Monarch
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(205, 25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_xm3pc")
+
+[connection signal="pressed" from="GuideBook/Panel/Close" to="." method="_on_close_pressed"]

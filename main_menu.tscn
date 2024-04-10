@@ -80,6 +80,7 @@ offset_right = 75.0
 offset_bottom = 75.0
 
 [node name="Panel" type="Panel" parent="GuideBook"]
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 500.0
 
