@@ -37,8 +37,8 @@ offset_left = 401.0
 offset_top = 14.0
 offset_right = 501.0
 offset_bottom = 35.0
-scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("2_qetdw")
+theme_override_font_sizes/font_size = 32
 text = "Guide Book
 "
 horizontal_alignment = 1
@@ -46,12 +46,12 @@ vertical_alignment = 1
 
 [node name="Char1" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 70.0
-offset_right = 160.0
-offset_bottom = 91.0
-scale = Vector2(2, 2)
+offset_left = 72.0
+offset_top = 71.0
+offset_right = 244.0
+offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("2_qetdw")
+theme_override_font_sizes/font_size = 32
 text = "Naoi Miya
 "
 horizontal_alignment = 1
@@ -59,11 +59,10 @@ vertical_alignment = 1
 
 [node name="Skill1" type="Label" parent="Panel/Char1"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 35.0
-offset_right = 54.0
-offset_bottom = 56.0
-scale = Vector2(0.5, 0.5)
+offset_left = 4.0
+offset_top = 69.0
+offset_right = 50.0
+offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Blue
 "
@@ -76,11 +75,10 @@ texture = ExtResource("3_6h7xn")
 
 [node name="Skill2" type="Label" parent="Panel/Char1"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 80.0
-offset_right = 42.0
-offset_bottom = 101.0
-scale = Vector2(0.5, 0.5)
+offset_left = 4.0
+offset_top = 159.0
+offset_right = 38.0
+offset_bottom = 180.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Red
 "
@@ -93,11 +91,10 @@ texture = ExtResource("4_jbdil")
 
 [node name="Skill3" type="Label" parent="Panel/Char1"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 125.0
-offset_right = 79.0
-offset_bottom = 146.0
-scale = Vector2(0.5, 0.5)
+offset_left = 4.0
+offset_top = 249.0
+offset_right = 75.0
+offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Infinity
 "
@@ -110,11 +107,10 @@ texture = ExtResource("5_6khe2")
 
 [node name="Skill4" type="Label" parent="Panel/Char1"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 170.0
-offset_right = 76.0
-offset_bottom = 191.0
-scale = Vector2(0.5, 0.5)
+offset_left = 4.0
+offset_top = 339.0
+offset_right = 72.0
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Purple
 "
@@ -127,12 +123,12 @@ texture = ExtResource("6_hbdas")
 
 [node name="Char2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 70.0
-offset_right = 500.0
-offset_bottom = 91.0
-scale = Vector2(2, 2)
+offset_left = 398.0
+offset_top = 71.0
+offset_right = 601.0
+offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("2_qetdw")
+theme_override_font_sizes/font_size = 32
 text = "Silver Dez
 "
 horizontal_alignment = 1
@@ -140,10 +136,10 @@ vertical_alignment = 1
 
 [node name="Skill1" type="Label" parent="Panel/Char2"]
 layout_mode = 0
-offset_top = 35.0
-offset_right = 116.0
-offset_bottom = 56.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.0
+offset_top = 70.0
+offset_right = 118.0
+offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Heat Blades
 "
@@ -156,10 +152,10 @@ texture = ExtResource("3_6h7xn")
 
 [node name="Skill2" type="Label" parent="Panel/Char2"]
 layout_mode = 0
-offset_top = 80.0
-offset_right = 120.0
-offset_bottom = 101.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.0
+offset_top = 160.0
+offset_right = 122.0
+offset_bottom = 181.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Laser Beams
 "
@@ -172,10 +168,10 @@ texture = ExtResource("4_jbdil")
 
 [node name="Skill3" type="Label" parent="Panel/Char2"]
 layout_mode = 0
-offset_top = 125.0
-offset_right = 100.0
-offset_bottom = 146.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.0
+offset_top = 250.0
+offset_right = 102.0
+offset_bottom = 271.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Overheat
 "
@@ -188,10 +184,10 @@ texture = ExtResource("5_6khe2")
 
 [node name="Skill4" type="Label" parent="Panel/Char2"]
 layout_mode = 0
-offset_top = 170.0
-offset_right = 104.0
-offset_bottom = 191.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.0
+offset_top = 340.0
+offset_right = 106.0
+offset_bottom = 361.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "The Burner
 "
@@ -204,12 +200,12 @@ texture = ExtResource("6_hbdas")
 
 [node name="Char3" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 700.0
-offset_top = 70.0
-offset_right = 822.0
-offset_bottom = 91.0
-scale = Vector2(2, 2)
+offset_left = 702.0
+offset_top = 71.0
+offset_right = 940.0
+offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("2_qetdw")
+theme_override_font_sizes/font_size = 32
 text = "Kang Ahyeon
 "
 horizontal_alignment = 1
@@ -218,10 +214,9 @@ vertical_alignment = 1
 [node name="Skill1" type="Label" parent="Panel/Char3"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 35.0
+offset_top = 69.0
 offset_right = 122.0
-offset_bottom = 56.0
-scale = Vector2(0.5, 0.5)
+offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Sword Dance
 "
@@ -236,10 +231,9 @@ texture = ExtResource("3_6h7xn")
 [node name="Skill2" type="Label" parent="Panel/Char3"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 80.0
+offset_top = 159.0
 offset_right = 154.0
-offset_bottom = 101.0
-scale = Vector2(0.5, 0.5)
+offset_bottom = 180.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Lightning Strike
 "
@@ -254,10 +248,9 @@ texture = ExtResource("4_jbdil")
 [node name="Skill3" type="Label" parent="Panel/Char3"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 125.0
+offset_top = 249.0
 offset_right = 128.0
-offset_bottom = 146.0
-scale = Vector2(0.5, 0.5)
+offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Light Barrier
 "
@@ -272,10 +265,9 @@ texture = ExtResource("5_6khe2")
 [node name="Skill4" type="Label" parent="Panel/Char3"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 170.0
+offset_top = 339.0
 offset_right = 136.0
-offset_bottom = 191.0
-scale = Vector2(0.5, 0.5)
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("2_qetdw")
 text = "Light Monarch
 "
