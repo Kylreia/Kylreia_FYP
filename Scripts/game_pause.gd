@@ -59,6 +59,3 @@ func _on_close_pressed():
 #func play_turn():
 #	await active_char.play_turn()
 #	var new_index : int = (active_char.get_index() + 1) % get_child_count()
-
-var current_health = 76
-var max_health = 150

@@ -3,11 +3,16 @@ extends Node3D
 @onready var blast_skill = preload("res://Particles/blast_orb.tscn")
 @onready var blast_spawn_point = get_node("../CameraNode/BlastSpawn")
 
-var current_health = 50
+var current_health = 100
 var max_health = 100
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
+	set_health($VBoxContainer/ProgressBar, current_health, max_health)
+
+func set_health(progress_bar, health, max_health):
+	progress_bar.value = health
+	progress_bar.max_value = max_health
 
 # FOR TESTING
 #func _input(event):

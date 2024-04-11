@@ -9,11 +9,12 @@ extends Node3D
 @onready var fragment_skill = preload("res://Particles/fragment.tscn")
 @onready var fragment_spawn_point = get_node("../CameraNode/FragmentSpawn")
 
-var current_health = 76
+var current_health = 150
 var max_health = 150
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
+	set_health($VBoxContainer/ProgressBar, current_health, max_health)
 
 func _input(event):
 	if event.is_action_pressed("Skill1"):
@@ -89,3 +90,7 @@ func spawn_fragment():
 	
 	fragment_orb.transform = fragment_spawn_point.global_transform
 	fragment_orb.linear_velocity = fragment_spawn_point.global_transform.basis.z * fragment_spd
+
+func set_health(progress_bar, health, max_health):
+	progress_bar.value = health
+	progress_bar.max_value = max_health

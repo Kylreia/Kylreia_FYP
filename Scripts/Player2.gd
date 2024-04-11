@@ -10,11 +10,12 @@ extends Node3D
 @onready var steam_skill = preload("res://Particles/steam.tscn")
 @onready var steam_spawn_point = get_node("../CameraNode/SteamSpawn")
 
-var current_health = 76
+var current_health = 150
 var max_health = 150
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
+	set_health($VBoxContainer/ProgressBar, current_health, max_health)
 
 func _input(event):
 	if event.is_action_pressed("Skill1"):
@@ -115,4 +116,6 @@ func spawn_steam():
 	steam_orb.queue_free()
 	
 
-
+func set_health(progress_bar, health, max_health):
+	progress_bar.value = health
+	progress_bar.max_value = max_health
