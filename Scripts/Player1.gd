@@ -50,7 +50,7 @@ func _ready():
 
 func _input(event):
 	if turn == true:
-		if not event is InputEventKey: #for particular example limit to keyboard
+		if not event is InputEventKey:
 			return
 		if not event.is_pressed():
 			return
@@ -63,7 +63,7 @@ func _input(event):
 		elif event.is_action_pressed("Ultimate"):
 			add_input_to_sequence(R)
 		$Label.text = str(Sequence)
-		timer.start() #reset timeout timer
+		timer.start()
 		check_sequence()
 
 func on_timeout()->void:

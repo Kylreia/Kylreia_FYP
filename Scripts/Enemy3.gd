@@ -14,12 +14,14 @@ extends Node3D
 
 @onready var player_health = get_node("../Player/VBoxContainer/ProgressBar")
 @onready var player_block = get_node("../Player")
+@onready var player = get_node("../Player")
 
 var current_health = 200
 var max_health = 200
 
 var defend = false
 var turn = false
+var rng = RandomNumberGenerator.new()
 
 signal nextQueue
 
@@ -40,37 +42,6 @@ func deal_dmg(value):
 		get_node("../Results/Panel/Label").text = "You Lost"
 		get_node("../Results/Panel").show()
 
-# FOR TESTING
-#func _input(event):
-#	if event.is_action_pressed("Skill1"):
-#		get_node("../Enemy/AnimationPlayer").play("Shard")
-#		spawn_shard()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Skill2"):
-#		get_node("../Enemy/AnimationPlayer").play("Whip")
-#		await get_tree().create_timer(1.5).timeout
-#		spawn_spike()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Block"):
-#		get_node("../Enemy/AnimationPlayer").play("Wall")
-#		await get_tree().create_timer(0.9).timeout
-#		spawn_wall()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Ultimate"):
-#		get_node("../Enemy/AnimationPlayer").play("Wave")
-#		await get_tree().create_timer(0.1).timeout
-#		for n in 2:
-#			await get_tree().create_timer(0.1).timeout
-#			spawn_wave()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
 func spawn_shard():
 	var shard_spd = 8
 	var shard_dmg = 15
@@ -114,11 +85,13 @@ func spawn_wall():
 
 	wall_orb.linear_velocity = wall_spawn_point.global_transform.basis.y * wall_spd
 	wall_orb2.linear_velocity = wall2_spawn_point.global_transform.basis.y * wall_spd
+	
+	defend = true
 
 
 func spawn_wave():
 	var wave_spd = 2.7
-	var wave_dmg = 30
+	var wave_dmg = 15
 	var wave_orb = wave_skill.instantiate()
 	var wave_orb2 = wave_skill.instantiate()
 
@@ -132,3 +105,38 @@ func spawn_wave():
 	wave_orb2.linear_velocity = wave2_spawn_point.global_transform.basis.z * -wave_spd
 	
 	deal_dmg(wave_dmg)
+
+
+func _on_player_next_turn():
+	defend = false
+	var my_num = int(rng.randf_range(1,4))
+	if my_num == 1:
+		get_node("../Enemy/AnimationPlayer").play("Shard")
+		spawn_shard()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	elif my_num == 2:
+		get_node("../Enemy/AnimationPlayer").play("Whip")
+		await get_tree().create_timer(1.5).timeout
+		spawn_spike()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	elif my_num == 3:
+		get_node("../Enemy/AnimationPlayer").play("Wall")
+		await get_tree().create_timer(0.9).timeout
+		spawn_wall()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	elif my_num == 4:
+		get_node("../Enemy/AnimationPlayer").play("Wave")
+		await get_tree().create_timer(0.1).timeout
+		for n in 2:
+			await get_tree().create_timer(0.1).timeout
+			spawn_wave()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	
+	await get_tree().create_timer(5).timeout
+	turn = false
+	player.turn = true
+	emit_signal("nextQueue")

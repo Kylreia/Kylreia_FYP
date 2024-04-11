@@ -206,7 +206,6 @@ func deal_dmg(value):
 
 
 func _on_enemy_next_queue():
-	pass
 	defend = false
 	timer = Timer.new()
 	add_child(timer)

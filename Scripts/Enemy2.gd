@@ -77,8 +77,8 @@ func spawn_rupture():
 	deal_dmg(rupture_dmg)
 
 func _on_player_next_turn():
+	defend = false
 	var my_num = int(rng.randf_range(1,3))
-	print(my_num)
 	if my_num == 1:
 		get_node("../Enemy/AnimationPlayer").play("Rupture")
 		await get_tree().create_timer(1.4).timeout

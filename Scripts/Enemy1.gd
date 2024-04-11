@@ -45,6 +45,7 @@ func spawn_blast():
 	deal_dmg(blast_dmg)
 
 func _on_player_next_turn():
+	defend = false
 	get_node("../Enemy/AnimationPlayer").play("Blast")
 	await get_tree().create_timer(1.3).timeout
 	spawn_blast()
