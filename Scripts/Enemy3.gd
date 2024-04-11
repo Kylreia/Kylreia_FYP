@@ -13,9 +13,12 @@ extends Node3D
 @onready var wave2_spawn_point = get_node("../CameraNode/WaveSpawn2")
 
 @onready var player_health = get_node("../Player/VBoxContainer/ProgressBar")
+@onready var player_block = get_node("../Player")
 
 var current_health = 200
 var max_health = 200
+
+var defend = false
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
@@ -26,7 +29,13 @@ func set_health(progress_bar, health, max_health):
 	progress_bar.max_value = max_health
 
 func deal_dmg(value):
-	player_health.value -= value
+	if player_block.defend == true:
+		pass
+	else:
+		player_health.value -= value
+	if player_health.value <= 0:
+		get_node("../Results/Panel/Label").text = "You Lost"
+		get_node("../Results/Panel").show()
 
 # FOR TESTING
 #func _input(event):

@@ -10,8 +10,9 @@ extends Node3D
 @onready var fragment_spawn_point = get_node("../CameraNode/FragmentSpawn")
 
 @onready var enemy_health = get_node("../Enemy/VBoxContainer/ProgressBar")
+@onready var enemy_block = get_node("../Enemy")
 
-var current_health = 150
+var current_health = 0
 var max_health = 150
 
 enum {Q, W, E, R}
@@ -24,6 +25,8 @@ var Moves:Dictionary = {
 	"Fragment" : [E, Q, R, W]
 	}
 var Names:Array = Moves.keys()
+
+var defend = false
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
@@ -188,6 +191,9 @@ func set_health(progress_bar, health, max_health):
 	progress_bar.max_value = max_health
 
 func deal_dmg(value):
-	enemy_health.value -= value
+	if enemy_block.defend == true:
+		pass
+	else:
+		enemy_health.value -= value
 	if enemy_health.value <= 0:
 		get_node("../Results/Panel").show()
