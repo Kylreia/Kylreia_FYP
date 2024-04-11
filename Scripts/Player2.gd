@@ -13,42 +13,127 @@ extends Node3D
 var current_health = 150
 var max_health = 150
 
+enum {Q, W, E, R}
+var timer:Timer
+var Sequence:Array = []
+var Moves:Dictionary = {
+	"HeatBlades" : [Q, R, W, E],
+	"LaserBeams" : [W, E, Q, R],
+	"Overheat" : [E, W, R, Q],
+	"TheBurner" : [R, Q, E, W]
+	}
+var Names:Array = Moves.keys()
+
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
 	set_health($VBoxContainer/ProgressBar, current_health, max_health)
+	
+	timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 5
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "on_timeout"))
+	$Label.text = str(Sequence)
 
 func _input(event):
+	
+	if not event is InputEventKey: #for particular example limit to keyboard
+		return
+	if not event.is_pressed():
+		return
 	if event.is_action_pressed("Skill1"):
-		get_node("../Player/AnimationPlayer").play("Slashes")
-		await get_tree().create_timer(1.2).timeout
-		spawn_slash()
-		await get_node("../Player/AnimationPlayer").animation_finished
-		get_node("../Player/AnimationPlayer").play("Idle")
-	
+		add_input_to_sequence(Q)
 	elif event.is_action_pressed("Skill2"):
-		get_node("../Player/AnimationPlayer").play("Laser")
-		await get_tree().create_timer(1.4).timeout
-		spawn_laser()
-		await get_node("../Player/AnimationPlayer").animation_finished
-		get_node("../Player/AnimationPlayer").play("Idle")
-	
+		add_input_to_sequence(W)
 	elif event.is_action_pressed("Block"):
-		get_node("../Player/AnimationPlayer").play("Overheat")
-		await get_tree().create_timer(1.4).timeout
-		spawn_steam()
-		await get_node("../Player/AnimationPlayer").animation_finished
-		get_node("../Player/AnimationPlayer").play("Idle")
-	
+		add_input_to_sequence(E)
 	elif event.is_action_pressed("Ultimate"):
-		get_node("../Player/AnimationPlayer").play("Slashes")
-		await get_tree().create_timer(1.2).timeout
-		spawn_slashb()
-		await get_node("../Player/AnimationPlayer").animation_finished
-		get_node("../Player/AnimationPlayer").play("Laser")
-		await get_tree().create_timer(1.4).timeout
-		spawn_laserb()
-		await get_node("../Player/AnimationPlayer").animation_finished
-		get_node("../Player/AnimationPlayer").play("Idle")
+		add_input_to_sequence(R)
+	$Label.text = str(Sequence)
+	timer.start() #reset timeout timerr
+	check_sequence()
+	
+#	if event.is_action_pressed("Skill1"):
+#		get_node("../Player/AnimationPlayer").play("Slashes")
+#		await get_tree().create_timer(1.2).timeout
+#		spawn_slash()
+#		await get_node("../Player/AnimationPlayer").animation_finished
+#		get_node("../Player/AnimationPlayer").play("Idle")
+#
+#	elif event.is_action_pressed("Skill2"):
+#		get_node("../Player/AnimationPlayer").play("Laser")
+#		await get_tree().create_timer(1.4).timeout
+#		spawn_laser()
+#		await get_node("../Player/AnimationPlayer").animation_finished
+#		get_node("../Player/AnimationPlayer").play("Idle")
+#
+#	elif event.is_action_pressed("Block"):
+#		get_node("../Player/AnimationPlayer").play("Overheat")
+#		await get_tree().create_timer(1.4).timeout
+#		spawn_steam()
+#		await get_node("../Player/AnimationPlayer").animation_finished
+#		get_node("../Player/AnimationPlayer").play("Idle")
+#
+#	elif event.is_action_pressed("Ultimate"):
+#		get_node("../Player/AnimationPlayer").play("Slashes")
+#		await get_tree().create_timer(1.2).timeout
+#		spawn_slashb()
+#		await get_node("../Player/AnimationPlayer").animation_finished
+#		get_node("../Player/AnimationPlayer").play("Laser")
+#		await get_tree().create_timer(1.4).timeout
+#		spawn_laserb()
+#		await get_node("../Player/AnimationPlayer").animation_finished
+#		get_node("../Player/AnimationPlayer").play("Idle")
+
+func on_timeout()->void:
+	print("timeout")
+	if $Label.text == str(Sequence):
+		$Label.text = "timeout"
+	Sequence = []
+
+func add_input_to_sequence(button:int)->void:
+	Sequence.push_back(button)
+
+func check_sequence()->void:
+	for Name in Names:
+		var combo:Array = Moves[Name]
+		var trim: = Sequence.duplicate()
+		trim.reverse()
+		trim.resize(combo.size())
+		trim.reverse()
+		if trim == combo:
+			print("COMBO: ", Name)
+			if Name == "HeatBlades":
+				get_node("../Player/AnimationPlayer").play("Slashes")
+				await get_tree().create_timer(1.2).timeout
+				spawn_slash()
+				await get_node("../Player/AnimationPlayer").animation_finished
+				get_node("../Player/AnimationPlayer").play("Idle")
+			elif Name == "LaserBeams":
+				get_node("../Player/AnimationPlayer").play("Laser")
+				await get_tree().create_timer(1.4).timeout
+				spawn_laser()
+				await get_node("../Player/AnimationPlayer").animation_finished
+				get_node("../Player/AnimationPlayer").play("Idle")
+			elif Name == "Overheat":
+				get_node("../Player/AnimationPlayer").play("Overheat")
+				await get_tree().create_timer(1.4).timeout
+				spawn_steam()
+				await get_node("../Player/AnimationPlayer").animation_finished
+				get_node("../Player/AnimationPlayer").play("Idle")
+			elif Name == "TheBurner":
+				get_node("../Player/AnimationPlayer").play("Slashes")
+				await get_tree().create_timer(1.2).timeout
+				spawn_slashb()
+				await get_node("../Player/AnimationPlayer").animation_finished
+				get_node("../Player/AnimationPlayer").play("Laser")
+				await get_tree().create_timer(1.4).timeout
+				spawn_laserb()
+				await get_node("../Player/AnimationPlayer").animation_finished
+				get_node("../Player/AnimationPlayer").play("Idle")
+			Sequence = []
+			$Label.text = Name
+			return
 
 func spawn_slash():
 	var slash_spd = 10
