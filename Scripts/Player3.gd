@@ -9,6 +9,8 @@ extends Node3D
 @onready var fragment_skill = preload("res://Particles/fragment.tscn")
 @onready var fragment_spawn_point = get_node("../CameraNode/FragmentSpawn")
 
+@onready var enemy_health = get_node("../Enemy/VBoxContainer/ProgressBar")
+
 var current_health = 150
 var max_health = 150
 
@@ -16,10 +18,10 @@ enum {Q, W, E, R}
 var timer:Timer
 var Sequence:Array = []
 var Moves:Dictionary = {
-	"Swipe" : [Q, R, W, E],
-	"LightningStrike" : [W, E, Q, R],
-	"LightBarrier" : [E, W, R, Q],
-	"Fragment" : [R, Q, E, W]
+	"Swipe" : [R, W, Q, E],
+	"LightningStrike" : [Q, E, W, R],
+	"LightBarrier" : [W, R, E, Q],
+	"Fragment" : [E, Q, R, W]
 	}
 var Names:Array = Moves.keys()
 
@@ -135,14 +137,16 @@ func check_sequence()->void:
 func spawn_swipe():
 	var swipe_dmg = 10
 	var swipe_orb = swipe_skill.instantiate()
-
+	
 	add_sibling(swipe_orb)
-
+	
 	swipe_orb.transform = swipe_spawn_point.global_transform
 	
 	await get_tree().create_timer(3).timeout
 	
 	swipe_orb.queue_free()
+	
+	deal_dmg(swipe_dmg)
 
 func spawn_lightning():
 	var lightning_spd = 30
@@ -153,6 +157,8 @@ func spawn_lightning():
 	
 	lightning_orb.transform = lightning_spawn_point.global_transform
 	lightning_orb.linear_velocity = lightning_spawn_point.global_transform.basis.y * -lightning_spd
+	
+	deal_dmg(lightning_dmg)
 
 func spawn_cloak():
 	var cloak_orb = cloak_skill.instantiate()
@@ -174,7 +180,12 @@ func spawn_fragment():
 	
 	fragment_orb.transform = fragment_spawn_point.global_transform
 	fragment_orb.linear_velocity = fragment_spawn_point.global_transform.basis.z * fragment_spd
+	
+	deal_dmg(fragment_dmg)
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
 	progress_bar.max_value = max_health
+
+func deal_dmg(value):
+	enemy_health.value -= value

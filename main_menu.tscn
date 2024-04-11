@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg684sboylrbo"]
+[gd_scene load_steps=13 format=3 uid="uid://bg684sboylrbo"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_brvin"]
 [ext_resource type="Theme" uid="uid://bpk41v36e0nqm" path="res://Assets/Themes/buttons.tres" id="1_nwjp2"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c64rv5aljp4wa" path="res://Assets/Input/keyboard_w.png" id="6_e4vyp"]
 [ext_resource type="Texture2D" uid="uid://b4gtvbwxfa876" path="res://Assets/Input/keyboard_e.png" id="7_4bf57"]
 [ext_resource type="Texture2D" uid="uid://dvrlgodqi7tud" path="res://Assets/Input/keyboard_r.png" id="8_xoa2t"]
+[ext_resource type="Texture2D" uid="uid://burbps4ceqr22" path="res://Assets/UI/ui-rpg/arrowBrown_right.png" id="10_xfyqy"]
+[ext_resource type="Texture2D" uid="uid://bicuaeddrwo6f" path="res://Assets/UI/ui-rpg/arrowBlue_right.png" id="11_mv8e8"]
+[ext_resource type="Texture2D" uid="uid://cwnl7h5jo62ht" path="res://Assets/UI/ui-rpg/arrowBeige_right.png" id="12_f7d0y"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -110,14 +113,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Char1" type="Label" parent="GuideBook/Panel"]
-layout_mode = 0
 offset_left = 72.0
 offset_top = 71.0
 offset_right = 244.0
 offset_bottom = 110.0
 theme_override_fonts/font = ExtResource("4_s3hl3")
 theme_override_font_sizes/font_size = 32
-text = "Naoi Miya
+text = "Naoi Miya )
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -134,9 +136,39 @@ text = "Blue
 vertical_alignment = 1
 
 [node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
-position = Vector2(140, 25)
+position = Vector2(23, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="ArrowBrownRight" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight2" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight3" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill1"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
 
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
@@ -150,9 +182,39 @@ text = "Red
 vertical_alignment = 1
 
 [node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
-position = Vector2(140, 25)
+position = Vector2(23, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="ArrowBrownRight" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight2" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight3" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill2"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
 
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
@@ -161,14 +223,44 @@ offset_top = 249.0
 offset_right = 75.0
 offset_bottom = 270.0
 theme_override_fonts/font = ExtResource("4_s3hl3")
-text = "Infinity
+text = "Infinity 
 "
 vertical_alignment = 1
 
 [node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
-position = Vector2(140, 25)
+position = Vector2(23, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_4bf57")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="ArrowBrownRight" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight2" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight3" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill3"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
 
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char1"]
 layout_mode = 0
@@ -182,12 +274,41 @@ text = "Purple
 vertical_alignment = 1
 
 [node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
-position = Vector2(140, 25)
+position = Vector2(23, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_xoa2t")
 
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="ArrowBrownRight" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight2" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
+[node name="ArrowBrownRight3" type="Sprite2D" parent="GuideBook/Panel/Char1/Skill4"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_xfyqy")
+
 [node name="Char2" type="Label" parent="GuideBook/Panel"]
-layout_mode = 0
 offset_left = 398.0
 offset_top = 71.0
 offset_right = 601.0
@@ -210,10 +331,40 @@ text = "Heat Blades
 "
 vertical_alignment = 1
 
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
 [node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
-position = Vector2(170, 25)
+position = Vector2(93, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="ArrowBlueRight" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight2" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight3" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill1"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
 
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char2"]
 layout_mode = 0
@@ -226,10 +377,40 @@ text = "Laser Beams
 "
 vertical_alignment = 1
 
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
 [node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
-position = Vector2(170, 25)
+position = Vector2(163, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="ArrowBlueRight" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight2" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight3" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill2"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
 
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char2"]
 layout_mode = 0
@@ -242,10 +423,40 @@ text = "Overheat
 "
 vertical_alignment = 1
 
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
 [node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
-position = Vector2(170, 25)
+position = Vector2(93, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_4bf57")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="ArrowBlueRight" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight2" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight3" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill3"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
 
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char2"]
 layout_mode = 0
@@ -258,13 +469,42 @@ text = "The Burner
 "
 vertical_alignment = 1
 
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(163, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
 [node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
-position = Vector2(170, 25)
+position = Vector2(233, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_xoa2t")
 
+[node name="ArrowBlueRight" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight2" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
+[node name="ArrowBlueRight3" type="Sprite2D" parent="GuideBook/Panel/Char2/Skill4"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_mv8e8")
+
 [node name="Char3" type="Label" parent="GuideBook/Panel"]
-layout_mode = 0
 offset_left = 702.0
 offset_top = 71.0
 offset_right = 940.0
@@ -288,10 +528,40 @@ text = "Sword Dance
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
 [node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
-position = Vector2(205, 25)
+position = Vector2(163, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="ArrowBeigeRight" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight2" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight3" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill1"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
 
 [node name="Skill2" type="Label" parent="GuideBook/Panel/Char3"]
 layout_mode = 0
@@ -305,10 +575,40 @@ text = "Lightning Strike
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
 [node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
-position = Vector2(205, 25)
+position = Vector2(163, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
+[node name="ArrowBeigeRight" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight2" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight3" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill2"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
 
 [node name="Skill3" type="Label" parent="GuideBook/Panel/Char3"]
 layout_mode = 0
@@ -322,10 +622,40 @@ text = "Light Barrier
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_xoa2t")
+
 [node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
-position = Vector2(205, 25)
+position = Vector2(163, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_4bf57")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
+[node name="ArrowBeigeRight" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight2" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight3" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill3"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
 
 [node name="Skill4" type="Label" parent="GuideBook/Panel/Char3"]
 layout_mode = 0
@@ -339,10 +669,40 @@ text = "Light Monarch
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="KeyboardE" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(23, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_4bf57")
+
+[node name="KeyboardQ" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(93, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xcrvs")
+
 [node name="KeyboardR" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
-position = Vector2(205, 25)
+position = Vector2(163, 50)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_xoa2t")
+
+[node name="KeyboardW" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(233, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4vyp")
+
+[node name="ArrowBeigeRight" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(58, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight2" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(128, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
+
+[node name="ArrowBeigeRight3" type="Sprite2D" parent="GuideBook/Panel/Char3/Skill4"]
+position = Vector2(198, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_f7d0y")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Guide Book" to="." method="_on_guide_book_pressed"]

@@ -10,6 +10,8 @@ extends Node3D
 @onready var steam_skill = preload("res://Particles/steam.tscn")
 @onready var steam_spawn_point = get_node("../CameraNode/SteamSpawn")
 
+@onready var enemy_health = get_node("../Enemy/VBoxContainer/ProgressBar")
+
 var current_health = 150
 var max_health = 150
 
@@ -17,10 +19,10 @@ enum {Q, W, E, R}
 var timer:Timer
 var Sequence:Array = []
 var Moves:Dictionary = {
-	"HeatBlades" : [Q, R, W, E],
-	"LaserBeams" : [W, E, Q, R],
-	"Overheat" : [E, W, R, Q],
-	"TheBurner" : [R, Q, E, W]
+	"HeatBlades" : [W, Q, R, E],
+	"LaserBeams" : [E, R, W, Q],
+	"Overheat" : [R, E, Q, W],
+	"TheBurner" : [Q, W, E, R]
 	}
 var Names:Array = Moves.keys()
 
@@ -147,6 +149,8 @@ func spawn_slash():
 	await get_tree().create_timer(1.7).timeout
 	
 	slash_orb.queue_free()
+	
+	deal_dmg(slash_dmg)
 
 func spawn_laser():
 	var laser_spd = 30
@@ -158,9 +162,11 @@ func spawn_laser():
 	add_sibling(laser2_orb)
 	
 	laser_orb.transform = laser_spawn_point.global_transform
-	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd	
+	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd
 	laser2_orb.transform = laser2_spawn_point.global_transform
-	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd	
+	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd
+	
+	deal_dmg(laser_dmg)
 
 func spawn_slashb():
 	var slash_spd = 10
@@ -174,6 +180,8 @@ func spawn_slashb():
 	await get_tree().create_timer(1.7).timeout
 	
 	slash_orb.queue_free()
+	
+	deal_dmg(slash_dmg)
 
 func spawn_laserb():
 	var laser_spd = 50
@@ -185,9 +193,11 @@ func spawn_laserb():
 	add_sibling(laser2_orb)
 	
 	laser_orb.transform = laser_spawn_point.global_transform
-	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd	
+	laser_orb.linear_velocity = laser_spawn_point.global_transform.basis.z  * laser_spd
 	laser2_orb.transform = laser2_spawn_point.global_transform
-	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd	
+	laser2_orb.linear_velocity = laser2_spawn_point.global_transform.basis.z  * laser_spd
+	
+	deal_dmg(laser_dmg)
 
 func spawn_steam():
 	var steam_orb = steam_skill.instantiate()
@@ -199,8 +209,10 @@ func spawn_steam():
 	await get_tree().create_timer(3.7).timeout
 	
 	steam_orb.queue_free()
-	
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
 	progress_bar.max_value = max_health
+
+func deal_dmg(value):
+	enemy_health.value -= value
