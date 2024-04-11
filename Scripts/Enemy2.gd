@@ -7,6 +7,8 @@ extends Node3D
 @onready var rupture_skill = preload("res://Particles/rupture.tscn")
 @onready var rupture_spawn_point = get_node("../CameraNode/RuptureSpawn")
 
+var current_health = 76
+var max_health = 150
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
@@ -39,6 +41,7 @@ func _ready():
 #
 #func spawn_voidblast():
 #	var voidblast_spd = 10
+#	var voidblast_dmg = 15
 #	var voidblast_orb = voidblast_skill.instantiate()
 #
 #	add_sibling(voidblast_orb)
@@ -60,7 +63,7 @@ func _ready():
 #
 #func spawn_rupture():
 #	var rupture_orb = rupture_skill.instantiate()
-#
+#	var rupture_dmg = 15
 #	add_sibling(rupture_orb)
 #
 #	rupture_orb.transform = rupture_spawn_point.global_transform

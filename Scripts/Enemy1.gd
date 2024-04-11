@@ -3,6 +3,9 @@ extends Node3D
 @onready var blast_skill = preload("res://Particles/blast_orb.tscn")
 @onready var blast_spawn_point = get_node("../CameraNode/BlastSpawn")
 
+var current_health = 50
+var max_health = 100
+
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 
@@ -17,6 +20,7 @@ func _ready():
 #
 #func spawn_blast():
 #	var blast_spd = 10
+#	var blast_dmg = 10
 #	var blast_orb = blast_skill.instantiate()
 #
 #	add_sibling(blast_orb)

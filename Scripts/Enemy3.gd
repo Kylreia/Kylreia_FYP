@@ -12,6 +12,9 @@ extends Node3D
 @onready var wave_spawn_point = get_node("../CameraNode/WaveSpawn")
 @onready var wave2_spawn_point = get_node("../CameraNode/WaveSpawn2")
 
+var current_health = 100
+var max_health = 200
+
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 
@@ -48,6 +51,7 @@ func _ready():
 #
 #func spawn_shard():
 #	var shard_spd = 8
+#	var shard_spd = 15
 #	var shard_orb = shard_skill.instantiate()
 #
 #	add_sibling(shard_orb)
@@ -57,6 +61,7 @@ func _ready():
 #
 #func spawn_spike():
 #	var spike_spd = 3
+#	var spike_dmg = 20
 #	var spike_orb = spike_skill.instantiate()
 #	var spike_orb2 = spike_skill.instantiate()
 #
@@ -87,6 +92,7 @@ func _ready():
 #
 #func spawn_wave():
 #	var wave_spd = 2.7
+#	var wave_dmg = 30
 #	var wave_orb = wave_skill.instantiate()
 #	var wave_orb2 = wave_skill.instantiate()
 #

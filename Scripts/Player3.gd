@@ -9,6 +9,9 @@ extends Node3D
 @onready var fragment_skill = preload("res://Particles/fragment.tscn")
 @onready var fragment_spawn_point = get_node("../CameraNode/FragmentSpawn")
 
+var current_health = 76
+var max_health = 150
+
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
 
@@ -45,6 +48,7 @@ func _input(event):
 		get_node("../Player/AnimationPlayer").play("Idle")
 
 func spawn_swipe():
+	var swipe_dmg = 10
 	var swipe_orb = swipe_skill.instantiate()
 
 	add_sibling(swipe_orb)
@@ -57,6 +61,7 @@ func spawn_swipe():
 
 func spawn_lightning():
 	var lightning_spd = 30
+	var lightning_dmg = 20
 	var lightning_orb = lightning_skill.instantiate()
 	
 	add_sibling(lightning_orb)
@@ -77,6 +82,7 @@ func spawn_cloak():
 
 func spawn_fragment():
 	var fragment_spd = 30
+	var fragment_dmg = 30
 	var fragment_orb = fragment_skill.instantiate()
 	
 	add_sibling(fragment_orb)

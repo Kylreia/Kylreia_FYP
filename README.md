@@ -16,4 +16,4 @@ Run in Godot Engine
 - Press R or up arrow key to fire a purple mass of energy
 
 # Assets note:
-- 2 3d models have been ommitted from the Git repository due to their large size
+- 2 3d models have been ommitted from the Git repository due to their large file size

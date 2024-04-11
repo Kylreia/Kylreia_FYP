@@ -9,6 +9,9 @@ extends Node3D
 @onready var purple_skill = preload("res://Particles/purple_orb.tscn")
 @onready var purple_spawn_point = get_node("../CameraNode/PurpleSpawn")
 
+var current_health = 76
+var max_health = 150
+
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
 
@@ -45,6 +48,7 @@ func _input(event):
 
 func spawn_blue():
 	var blue_spd = 10
+	var blue_dmg = 10
 	var blue_orb = blue_skill.instantiate()
 	
 	add_sibling(blue_orb)
@@ -54,6 +58,7 @@ func spawn_blue():
 
 func spawn_red():
 	var red_spd = 50
+	var red_dmg = 15
 	var red_orb = red_skill.instantiate()
 	
 	add_sibling(red_orb)
@@ -74,9 +79,13 @@ func spawn_infinity():
 
 func spawn_purple():
 	var purp_spd = 25
+	var purp_dmg = 25
 	var purp_orb = purple_skill.instantiate()
 	
 	add_sibling(purp_orb)
 	
 	purp_orb.transform = purple_spawn_point.global_transform
 	purp_orb.linear_velocity = purple_spawn_point.global_transform.basis.z  * purp_spd
+
+func set_health(progress_bar, health, max_health):
+	pass

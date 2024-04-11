@@ -10,6 +10,9 @@ extends Node3D
 @onready var steam_skill = preload("res://Particles/steam.tscn")
 @onready var steam_spawn_point = get_node("../CameraNode/SteamSpawn")
 
+var current_health = 76
+var max_health = 150
+
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
 
@@ -48,6 +51,7 @@ func _input(event):
 
 func spawn_slash():
 	var slash_spd = 10
+	var slash_dmg = 7.5
 	var slash_orb = slash_skill.instantiate()
 	
 	add_sibling(slash_orb)
@@ -60,6 +64,7 @@ func spawn_slash():
 
 func spawn_laser():
 	var laser_spd = 30
+	var laser_dmg = 15
 	var laser_orb = laser_skill.instantiate()
 	var laser2_orb = laser_skill.instantiate()
 	
@@ -73,6 +78,7 @@ func spawn_laser():
 
 func spawn_slashb():
 	var slash_spd = 10
+	var slash_dmg = 15
 	var slash_orb = slashb_skill.instantiate()
 	
 	add_sibling(slash_orb)
@@ -85,6 +91,7 @@ func spawn_slashb():
 
 func spawn_laserb():
 	var laser_spd = 50
+	var laser_dmg = 30
 	var laser_orb = laserb_skill.instantiate()
 	var laser2_orb = laserb_skill.instantiate()
 	
