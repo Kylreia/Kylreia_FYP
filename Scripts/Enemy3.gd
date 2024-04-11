@@ -12,6 +12,8 @@ extends Node3D
 @onready var wave_spawn_point = get_node("../CameraNode/WaveSpawn")
 @onready var wave2_spawn_point = get_node("../CameraNode/WaveSpawn2")
 
+@onready var player_health = get_node("../Player/VBoxContainer/ProgressBar")
+
 var current_health = 200
 var max_health = 200
 
@@ -22,6 +24,9 @@ func _ready():
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
 	progress_bar.max_value = max_health
+
+func deal_dmg(value):
+	player_health.value -= value
 
 # FOR TESTING
 #func _input(event):
@@ -54,58 +59,64 @@ func set_health(progress_bar, health, max_health):
 #		await get_node("../Enemy/AnimationPlayer").animation_finished
 #		get_node("../Enemy/AnimationPlayer").play("Idle")
 #
-#func spawn_shard():
-#	var shard_spd = 8
-#	var shard_spd = 15
-#	var shard_orb = shard_skill.instantiate()
-#
-#	add_sibling(shard_orb)
-#
-#	shard_orb.transform = shard_spawn_point.global_transform
-#	shard_orb.linear_velocity = shard_spawn_point.global_transform.basis.z * -shard_spd
-#
-#func spawn_spike():
-#	var spike_spd = 3
-#	var spike_dmg = 20
-#	var spike_orb = spike_skill.instantiate()
-#	var spike_orb2 = spike_skill.instantiate()
-#
-#	add_sibling(spike_orb)
-#	add_sibling(spike_orb2)
-#
-#	spike_orb.transform = spike_spawn_point.global_transform
-#	spike_orb2.transform = spike2_spawn_point.global_transform
-#
-#	spike_orb.linear_velocity = spike_spawn_point.global_transform.basis.y * spike_spd
-#	spike_orb2.linear_velocity = spike2_spawn_point.global_transform.basis.y * spike_spd
-#
-#
-#func spawn_wall():
-#	var wall_spd = 10
-#	var wall_orb = wall_skill.instantiate()
-#	var wall_orb2 = wall_skill.instantiate()
-#
-#	add_sibling(wall_orb)
-#	add_sibling(wall_orb2)
-#
-#	wall_orb.transform = wall_spawn_point.global_transform
-#	wall_orb2.transform = wall2_spawn_point.global_transform
-#
-#	wall_orb.linear_velocity = wall_spawn_point.global_transform.basis.y * wall_spd
-#	wall_orb2.linear_velocity = wall2_spawn_point.global_transform.basis.y * wall_spd
-#
-#
-#func spawn_wave():
-#	var wave_spd = 2.7
-#	var wave_dmg = 30
-#	var wave_orb = wave_skill.instantiate()
-#	var wave_orb2 = wave_skill.instantiate()
-#
-#	add_sibling(wave_orb)
-#	add_sibling(wave_orb2)
-#
-#	wave_orb.transform = wave_spawn_point.global_transform
-#	wave_orb2.transform = wave2_spawn_point.global_transform
-#
-#	wave_orb.linear_velocity = wave_spawn_point.global_transform.basis.z * -wave_spd
-#	wave_orb2.linear_velocity = wave2_spawn_point.global_transform.basis.z * -wave_spd
+func spawn_shard():
+	var shard_spd = 8
+	var shard_dmg = 15
+	var shard_orb = shard_skill.instantiate()
+
+	add_sibling(shard_orb)
+
+	shard_orb.transform = shard_spawn_point.global_transform
+	shard_orb.linear_velocity = shard_spawn_point.global_transform.basis.z * -shard_spd
+	
+	deal_dmg(shard_dmg)
+
+func spawn_spike():
+	var spike_spd = 3
+	var spike_dmg = 20
+	var spike_orb = spike_skill.instantiate()
+	var spike_orb2 = spike_skill.instantiate()
+
+	add_sibling(spike_orb)
+	add_sibling(spike_orb2)
+
+	spike_orb.transform = spike_spawn_point.global_transform
+	spike_orb2.transform = spike2_spawn_point.global_transform
+
+	spike_orb.linear_velocity = spike_spawn_point.global_transform.basis.y * spike_spd
+	spike_orb2.linear_velocity = spike2_spawn_point.global_transform.basis.y * spike_spd
+	
+	deal_dmg(spike_dmg)
+
+
+func spawn_wall():
+	var wall_spd = 10
+	var wall_orb = wall_skill.instantiate()
+	var wall_orb2 = wall_skill.instantiate()
+
+	add_sibling(wall_orb)
+	add_sibling(wall_orb2)
+
+	wall_orb.transform = wall_spawn_point.global_transform
+	wall_orb2.transform = wall2_spawn_point.global_transform
+
+	wall_orb.linear_velocity = wall_spawn_point.global_transform.basis.y * wall_spd
+	wall_orb2.linear_velocity = wall2_spawn_point.global_transform.basis.y * wall_spd
+
+
+func spawn_wave():
+	var wave_spd = 2.7
+	var wave_dmg = 30
+	var wave_orb = wave_skill.instantiate()
+	var wave_orb2 = wave_skill.instantiate()
+
+	add_sibling(wave_orb)
+	add_sibling(wave_orb2)
+
+	wave_orb.transform = wave_spawn_point.global_transform
+	wave_orb2.transform = wave2_spawn_point.global_transform
+
+	wave_orb.linear_velocity = wave_spawn_point.global_transform.basis.z * -wave_spd
+	wave_orb2.linear_velocity = wave2_spawn_point.global_transform.basis.z * -wave_spd
+	
+	deal_dmg(wave_dmg)
