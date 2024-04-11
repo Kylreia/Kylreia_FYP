@@ -189,3 +189,5 @@ func set_health(progress_bar, health, max_health):
 
 func deal_dmg(value):
 	enemy_health.value -= value
+	if enemy_health.value <= 0:
+		get_node("../Results/Panel").show()

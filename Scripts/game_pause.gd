@@ -5,18 +5,30 @@ var paused = false
 func _input(event):
 	if event.is_action_pressed("Pause"):
 		pauseMenu(paused)
+	elif get_node("Results/Panel").is_visible():
+		resultsMenu(paused)
 
 func pauseMenu(state):
 	if state:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		get_node("PauseMenu/Panel").hide()
 		get_tree().paused = false
-		
+	
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		get_node("PauseMenu/Panel").show()
 
+func resultsMenu(state):
+	if state:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		get_node("Results/Panel").hide()
+		get_tree().paused = false
+	
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
+		get_node("Results/Panel").show()
 
 func _on_resume_button_pressed():
 	get_node("PauseMenu/Panel").hide()
