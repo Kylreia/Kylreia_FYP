@@ -19,6 +19,9 @@ var current_health = 200
 var max_health = 200
 
 var defend = false
+var turn = false
+
+signal nextQueue
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")

@@ -12,9 +12,12 @@ extends Node3D
 
 @onready var enemy_health = get_node("../Enemy/VBoxContainer/ProgressBar")
 @onready var enemy_block = get_node("../Enemy")
+@onready var enemy = get_node("../Enemy")
 
 var current_health = 150
 var max_health = 150
+
+signal nextTurn
 
 enum {Q, W, E, R}
 var timer:Timer
@@ -28,67 +31,41 @@ var Moves:Dictionary = {
 var Names:Array = Moves.keys()
 
 var defend = false
+var turn = true
 
 func _ready():
 	get_node("../Player/AnimationPlayer").play("Idle")
 	set_health($VBoxContainer/ProgressBar, current_health, max_health)
 	
+	defend = false
 	timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 5
+	timer.wait_time = 1
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "on_timeout"))
 	$Label.text = str(Sequence)
+	await get_tree().create_timer(5).timeout
+	turn = false
+	enemy.turn = true
+	emit_signal("nextTurn")
 
 func _input(event):
-	
-	if not event is InputEventKey: #for particular example limit to keyboard
-		return
-	if not event.is_pressed():
-		return
-	if event.is_action_pressed("Skill1"):
-		add_input_to_sequence(Q)
-	elif event.is_action_pressed("Skill2"):
-		add_input_to_sequence(W)
-	elif event.is_action_pressed("Block"):
-		add_input_to_sequence(E)
-	elif event.is_action_pressed("Ultimate"):
-		add_input_to_sequence(R)
-	$Label.text = str(Sequence)
-	timer.start() #reset timeout timerr
-	check_sequence()
-	
-#	if event.is_action_pressed("Skill1"):
-#		get_node("../Player/AnimationPlayer").play("Slashes")
-#		await get_tree().create_timer(1.2).timeout
-#		spawn_slash()
-#		await get_node("../Player/AnimationPlayer").animation_finished
-#		get_node("../Player/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Skill2"):
-#		get_node("../Player/AnimationPlayer").play("Laser")
-#		await get_tree().create_timer(1.4).timeout
-#		spawn_laser()
-#		await get_node("../Player/AnimationPlayer").animation_finished
-#		get_node("../Player/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Block"):
-#		get_node("../Player/AnimationPlayer").play("Overheat")
-#		await get_tree().create_timer(1.4).timeout
-#		spawn_steam()
-#		await get_node("../Player/AnimationPlayer").animation_finished
-#		get_node("../Player/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Ultimate"):
-#		get_node("../Player/AnimationPlayer").play("Slashes")
-#		await get_tree().create_timer(1.2).timeout
-#		spawn_slashb()
-#		await get_node("../Player/AnimationPlayer").animation_finished
-#		get_node("../Player/AnimationPlayer").play("Laser")
-#		await get_tree().create_timer(1.4).timeout
-#		spawn_laserb()
-#		await get_node("../Player/AnimationPlayer").animation_finished
-#		get_node("../Player/AnimationPlayer").play("Idle")
+	if turn == true:
+		if not event is InputEventKey: 
+			return
+		if not event.is_pressed():
+			return
+		if event.is_action_pressed("Skill1"):
+			add_input_to_sequence(Q)
+		elif event.is_action_pressed("Skill2"):
+			add_input_to_sequence(W)
+		elif event.is_action_pressed("Block"):
+			add_input_to_sequence(E)
+		elif event.is_action_pressed("Ultimate"):
+			add_input_to_sequence(R)
+		$Label.text = str(Sequence)
+		timer.start()
+		check_sequence()
 
 func on_timeout()->void:
 	print("timeout")
@@ -212,6 +189,8 @@ func spawn_steam():
 	await get_tree().create_timer(3.7).timeout
 	
 	steam_orb.queue_free()
+	
+	defend = true
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health

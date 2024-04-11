@@ -9,11 +9,16 @@ extends Node3D
 
 @onready var player_health = get_node("../Player/VBoxContainer/ProgressBar")
 @onready var player_block = get_node("../Player")
+@onready var player = get_node("../Player")
 
 var current_health = 150
 var max_health = 150
 
 var defend = false
+var turn = false
+var rng = RandomNumberGenerator.new()
+
+signal nextQueue
 
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
@@ -80,6 +85,8 @@ func spawn_barrier():
 	await get_tree().create_timer(3.4).timeout
 	
 	barrier_orb.queue_free()
+	
+	defend = true
 
 
 func spawn_rupture():
