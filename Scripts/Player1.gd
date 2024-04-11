@@ -178,7 +178,7 @@ func deal_dmg(value):
 	if enemy_health.value <= 0:
 		get_node("../Results/Panel").show()
 
-func _on_next_turn():
+func _on_enemy_next_queue():
 	defend = false
 	$BlockLabel.hide()
 	timer = Timer.new()

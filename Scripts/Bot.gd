@@ -15,6 +15,8 @@ signal nextQueue
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 	set_health($VBoxContainer/ProgressBar, current_health, max_health)
+	
+	emit_signal("nextQueue")
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -26,4 +28,5 @@ func _on_player_next_turn():
 	pass
 	turn = false
 	player.turn = true
+	get_node("../TurnLabel").text = "Your turn"
 	emit_signal("nextQueue")
