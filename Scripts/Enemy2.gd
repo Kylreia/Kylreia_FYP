@@ -37,35 +37,9 @@ func deal_dmg(value):
 		get_node("../Results/Panel/Label").text = "You Lost"
 		get_node("../Results/Panel").show()
 
-# FOR TESTING
-#func _input(event):
-#	if event.is_action_pressed("Skill1"):
-#		get_node("../Enemy/AnimationPlayer").play("Rupture")
-#		await get_tree().create_timer(1.4).timeout
-#		spawn_rupture()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Skill2"):
-#		get_node("../Enemy/AnimationPlayer").play("Blast")
-#		await get_tree().create_timer(1).timeout
-#		for n in 5:
-#			spawn_voidblast()
-#			await get_tree().create_timer(0.3).timeout
-#		# end for
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
-#	elif event.is_action_pressed("Block"):
-#		get_node("../Enemy/AnimationPlayer").play("Barrier")
-#		await get_tree().create_timer(1.7).timeout
-#		spawn_barrier()
-#		await get_node("../Enemy/AnimationPlayer").animation_finished
-#		get_node("../Enemy/AnimationPlayer").play("Idle")
-#
 func spawn_voidblast():
 	var voidblast_spd = 10
-	var voidblast_dmg = 15
+	var voidblast_dmg = 3
 	var voidblast_orb = voidblast_skill.instantiate()
 	
 	add_sibling(voidblast_orb)
@@ -102,3 +76,32 @@ func spawn_rupture():
 	
 	deal_dmg(rupture_dmg)
 
+func _on_player_next_turn():
+	var my_num = int(rng.randf_range(1,3))
+	print(my_num)
+	if my_num == 1:
+		get_node("../Enemy/AnimationPlayer").play("Rupture")
+		await get_tree().create_timer(1.4).timeout
+		spawn_rupture()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	elif my_num == 2:
+		get_node("../Enemy/AnimationPlayer").play("Blast")
+		await get_tree().create_timer(1).timeout
+		for n in 5:
+			spawn_voidblast()
+			await get_tree().create_timer(0.3).timeout
+		# end for
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	elif my_num == 3:
+		get_node("../Enemy/AnimationPlayer").play("Barrier")
+		await get_tree().create_timer(1.7).timeout
+		spawn_barrier()
+		await get_node("../Enemy/AnimationPlayer").animation_finished
+		get_node("../Enemy/AnimationPlayer").play("Idle")
+	
+	await get_tree().create_timer(5).timeout
+	turn = false
+	player.turn = true
+	emit_signal("nextQueue")

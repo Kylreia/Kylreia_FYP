@@ -203,3 +203,18 @@ func deal_dmg(value):
 		enemy_health.value -= value
 	if enemy_health.value <= 0:
 		get_node("../Results/Panel").show()
+
+
+func _on_enemy_next_queue():
+	pass
+	defend = false
+	timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 1
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "on_timeout"))
+	$Label.text = str(Sequence)
+	await get_tree().create_timer(5).timeout
+	turn = false
+	enemy.turn = true
+	emit_signal("nextTurn")

@@ -188,5 +188,4 @@ func _on_next_turn():
 	await get_tree().create_timer(5).timeout
 	turn = false
 	enemy.turn = true
-	print("from player", turn)
 	emit_signal("nextTurn")
