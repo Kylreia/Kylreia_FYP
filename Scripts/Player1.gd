@@ -185,7 +185,11 @@ func _on_next_turn():
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "on_timeout"))
 	$Label.text = str(Sequence)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(10).timeout
 	turn = false
 	enemy.turn = true
 	emit_signal("nextTurn")
+
+
+func _on_enemy_next_queue():
+	pass # Replace with function body.

@@ -101,7 +101,7 @@ func _on_player_next_turn():
 		await get_node("../Enemy/AnimationPlayer").animation_finished
 		get_node("../Enemy/AnimationPlayer").play("Idle")
 	
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(7).timeout
 	turn = false
 	player.turn = true
 	emit_signal("nextQueue")
