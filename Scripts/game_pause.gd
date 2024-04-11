@@ -25,6 +25,7 @@ func _on_resume_button_pressed():
 
 func _on_retry_button_pressed():
 	pass # Replace with function body.
+	get_tree().paused = false
 
 
 func _on_guide_button_pressed():

@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqalvvyc06lya"]
+
+[ext_resource type="FontFile" uid="uid://c503v70w64w20" path="res://Assets/UI/ui/font/kenvector_future_thin.ttf" id="1_18gob"]
+[ext_resource type="Theme" uid="uid://wknvh8l87apy" path="res://Assets/Themes/buttons3.tres" id="2_12aui"]
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 240.0
+offset_right = 800.0
+offset_bottom = 390.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 15.0
+offset_right = 382.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.47451, 0.819608, 0.317647, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_18gob")
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_12aui")
+text = "Retry"
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_12aui")
+text = "Stage Select
+"
+
+[node name="ExitButton" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_12aui")
+text = "Exit"
