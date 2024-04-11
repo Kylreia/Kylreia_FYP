@@ -18,6 +18,8 @@ signal nextQueue
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 	set_health($VBoxContainer/ProgressBar, current_health, max_health)
+	
+	emit_signal("nextQueue")
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -46,6 +48,7 @@ func spawn_blast():
 
 func _on_player_next_turn():
 	defend = false
+	$BlockLabel.hide()
 	get_node("../Enemy/AnimationPlayer").play("Blast")
 	await get_tree().create_timer(1.3).timeout
 	spawn_blast()
@@ -54,4 +57,5 @@ func _on_player_next_turn():
 	await get_tree().create_timer(10).timeout
 	turn = false
 	player.turn = true
+	get_node("../TurnLabel").text = "Your turn"
 	emit_signal("nextQueue")

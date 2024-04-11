@@ -42,7 +42,7 @@ func _ready():
 	timer.wait_time = 1
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "on_timeout"))
-	$Label.text = str(Sequence)
+	$ActionLabel.text = str(Sequence)
 	await get_tree().create_timer(5).timeout
 	turn = false
 	enemy.turn = true
@@ -62,14 +62,14 @@ func _input(event):
 			add_input_to_sequence(E)
 		elif event.is_action_pressed("Ultimate"):
 			add_input_to_sequence(R)
-		$Label.text = str(Sequence)
+		$ActionLabel.text = str(Sequence)
 		timer.start()
 		check_sequence()
 
 func on_timeout()->void:
 	print("timeout")
-	if $Label.text == str(Sequence):
-		$Label.text = "timeout"
+	if $ActionLabel.text == str(Sequence):
+		$ActionLabel.text = "timeout"
 	Sequence = []
 
 func add_input_to_sequence(button:int)->void:
@@ -112,7 +112,7 @@ func check_sequence()->void:
 				await get_node("../Player/AnimationPlayer").animation_finished
 				get_node("../Player/AnimationPlayer").play("Idle")
 			Sequence = []
-			$Label.text = Name
+			$ActionLabel.text = Name
 			return
 
 func spawn_blue():
@@ -147,11 +147,12 @@ func spawn_infinity():
 	
 	infinity_orb.transform = infinity_spawn_point.global_transform
 	
+	$BlockLabel.show()
+	defend = true
+	
 	await get_tree().create_timer(3.5).timeout
 	
 	infinity_orb.queue_free()
-	
-	defend = true
 
 func spawn_purple():
 	var purp_spd = 25
@@ -179,17 +180,15 @@ func deal_dmg(value):
 
 func _on_next_turn():
 	defend = false
+	$BlockLabel.hide()
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 1
 	timer.one_shot = true
 	timer.connect("timeout", Callable(self, "on_timeout"))
-	$Label.text = str(Sequence)
+	$ActionLabel.text = str(Sequence)
 	await get_tree().create_timer(10).timeout
 	turn = false
 	enemy.turn = true
+	get_node("../TurnLabel").text = "Enemy turn"
 	emit_signal("nextTurn")
-
-
-func _on_enemy_next_queue():
-	pass # Replace with function body.

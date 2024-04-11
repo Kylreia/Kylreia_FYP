@@ -28,6 +28,8 @@ signal nextQueue
 func _ready():
 	get_node("AnimationPlayer").play("Idle")
 	set_health($VBoxContainer/ProgressBar, current_health, max_health)
+	
+	emit_signal("nextQueue")
 
 func set_health(progress_bar, health, max_health):
 	progress_bar.value = health
@@ -87,6 +89,7 @@ func spawn_wall():
 	wall_orb2.linear_velocity = wall2_spawn_point.global_transform.basis.y * wall_spd
 	
 	defend = true
+	$BlockLabel.show()
 
 
 func spawn_wave():
@@ -109,6 +112,7 @@ func spawn_wave():
 
 func _on_player_next_turn():
 	defend = false
+	$BlockLabel.hide()
 	var my_num = int(rng.randf_range(1,4))
 	if my_num == 1:
 		get_node("../Enemy/AnimationPlayer").play("Shard")
@@ -139,4 +143,5 @@ func _on_player_next_turn():
 	await get_tree().create_timer(5).timeout
 	turn = false
 	player.turn = true
+	get_node("../TurnLabel").text = "Your turn"
 	emit_signal("nextQueue")
