@@ -7,6 +7,13 @@ func _input(event):
 		pauseMenu(paused)
 	elif get_node("Results/Panel").is_visible():
 		resultsMenu(paused)
+	if get_tree().current_scene.name == "trainingRoom" or get_tree().current_scene.name == "trainingRoom1" or get_tree().current_scene.name == "trainingRoom2":
+		if event.is_action_pressed("Char1"):
+			get_tree().change_scene_to_file("res://trainingRoom.tscn")
+		elif event.is_action_pressed("Char2"):
+			get_tree().change_scene_to_file("res://trainingRoom1.tscn")
+		elif event.is_action_pressed("Char3"):
+			get_tree().change_scene_to_file("res://trainingRoom2.tscn")
 
 func pauseMenu(state):
 	if state:
